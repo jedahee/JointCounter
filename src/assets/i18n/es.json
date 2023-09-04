@@ -1,0 +1,27 @@
+{
+    "text_presentation": "JointCounter es la aplicación perfecta para medir cuánto fumas y cuánto dinero gastas en ello.",
+    "text_h1_presentation": "Selecciona tu idioma",
+    "text_english": "Inglés",
+    "text_spanish": "Español",
+    "text_btn_presentation": "Empezar",
+
+
+    "create_word_upper":"CREAR",
+    "sign_word_upper":"INICIAR",
+    "in_word_upper":"SESIÓN",
+    "up_word_upper":"CUENTA",
+    "sign_in": "Iniciar sesión",
+    "sign_up": "Crear cuenta",
+    "username":"Nombre de usuario",
+    "password":"Contraseña",
+    "confirm_password":"Confirmar contraseña",
+    "send":"Enviar",
+
+
+    "error_1": "Este campo es obligatorio",
+    "error_2": "Debe tener una longitud de 6 caracteres como mínimo",
+    "error_3": "Debe tener una longitud de 50 caracteres como máximo",
+    "error_4": "Las contraseñas no coinciden",
+    
+    "popup_error_500": "Ocurrió un error"
+}

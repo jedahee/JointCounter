@@ -1,0 +1,47 @@
+.popup {
+    position: fixed;
+    top: 10px;
+    width: 90%;
+    left: 50%;
+    border-radius: $br-sm;
+    transform: translateX(-50%);
+    right: 0;
+    padding: ($sep-2xs + 1px) $sep-xs;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    column-gap: .5rem;
+    transition: opacity .25s ease;
+
+    .msg{
+        font-size: 14px;
+    }
+}
+
+.popup.hidden {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.popup.error {
+    background-color: $red;
+    color: $light;
+}
+
+.popup.success {
+    background-color: $green;
+    color: $light;
+}
+
+.error-msg-container {
+    margin-top: $sep-2xs;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 24px;
+    }
+    p {
+        color: $red;
+    }
+}

@@ -1,0 +1,27 @@
+.link {
+    position: relative;
+    color: $green;
+    transition: .25s ease;
+}
+
+.link:hover {
+    color: $green_hover;
+}
+
+.link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 25px;
+    transition: .25s ease;
+    border-radius: 10px;
+    background-color: $green;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+}
+
+.link:hover::after {
+    width: 100%;
+    background-color: $green_hover;
+}

@@ -1,0 +1,43 @@
+<app-header-large></app-header-large>
+
+<div class="main-presentation">
+    <div class="custom-select">
+        <h3>{{"text_h1_presentation" | translate }}</h3>
+    
+        <div id="select-lang" (click)="changeStatus()">
+            <div class="preview">
+                <div class="en {{lang_selected == 'es' && 'hidden'}}">
+                    <img src="../../../assets/img/flag-britain.png" alt="English: ">
+                    <span>{{"text_english" | translate }}</span>
+                </div>
+        
+                <div class="es {{lang_selected == 'en' && 'hidden'}}">
+                    <img src="../../../assets/img/flag-spain.png" alt="Spanish: ">
+                    <span>{{"text_spanish" | translate }}</span>
+                </div>
+            </div>
+            <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
+        </div>
+    
+        <div class="options {{!hidden_options && 'hidden'}}">
+            <div class="en {{lang_selected == 'en' && 'disable'}}" (click)="changeLang('en')">
+                <img src="../../../assets/img/flag-britain.png" alt="English: ">
+                <span>{{"text_english" | translate }}</span>
+            </div>
+    
+            <div class="es {{lang_selected == 'es' && 'disable'}}" (click)="changeLang('es')">
+                <img src="../../../assets/img/flag-spain.png" alt="Spanish: ">
+                <span>{{"text_spanish" | translate }}</span>
+            </div>
+        </div>
+    </div>
+    
+    <p class="text-presentation">
+        {{"text_presentation" | translate }}
+    </p>
+    
+    <button routerLink="/sign-in" class="btn btn-double-arrow">
+        <span>{{"text_btn_presentation" | translate }}</span>
+        <img src="../../../assets/icons/double-arrow.svg" alt=">>">
+    </button>
+</div>

@@ -1,0 +1,26 @@
+{
+    
+    "text_presentation": "JointCounter is the perfect application to measure how much you smoke and how much money you spend on it.",
+    "text_h1_presentation": "Select your lang",
+    "text_english": "English",
+    "text_spanish": "Spanish",
+    "text_btn_presentation": "Get Started",
+
+    "create_word_upper":"SIGN",
+    "sign_word_upper":"SIGN",
+    "in_word_upper":"IN",
+    "up_word_upper":"UP",
+    "sign_in": "Sign in",
+    "sign_up": "Sign up",
+    "username":"Username",
+    "password":"Password",
+    "confirm_password":"Confirm Password",
+    "send":"Send",
+
+    "error_1": "This field is required",
+    "error_2": "The field must contain 6 characters at least",
+    "error_3": "The field must contain maximum 50 characters",
+    "error_4": "Password are different",
+
+    "popup_error_500": "Something failed"
+}

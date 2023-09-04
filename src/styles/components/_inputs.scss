@@ -1,0 +1,80 @@
+
+// ### SELECT ###
+.custom-select {
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: $sep-xs 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $sep-2xs;
+
+    #select-lang {
+        border-radius: $br-md;
+        background-color: $light;
+        border: 2px solid $green;
+        accent-color: $green;
+        color: $dark;
+        padding: $sep-2xs;
+        width: 100%;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            width: 24px;
+            transition: .25s ease;
+        }
+        
+        img.rotate {
+            transform: rotate(180deg);
+        }
+    }
+    
+    .options {
+        display: flex;
+        flex-direction: column;
+        bottom: -90%;
+        background-color: $light;
+        border-radius: $br-md;
+        padding: $sep-xs;
+        -webkit-box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.14);
+        -moz-box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.14);
+        box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.14);
+        width: 100%;
+        position: absolute;
+    }
+
+    .en, .es {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: $sep-2xs;
+        margin-bottom: $sep-2xs;
+        padding-left: $sep-2xs + 2px;
+        
+        img {
+            width: 32px;
+            
+        }
+
+    }
+
+    .en:last-child, .es:last-child {
+        margin-bottom: inherit;
+    }
+
+    .preview .es, .preview .en {
+        margin-bottom: 0;
+    }
+
+    .options.hidden, .en.hidden, .es.hidden {
+        display: none;
+    }
+
+    .es.disable, .en.disable{
+        opacity: .5;
+        pointer-events: none;
+    }
+}

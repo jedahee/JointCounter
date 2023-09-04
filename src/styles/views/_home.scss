@@ -1,0 +1,18 @@
+.main-presentation {
+    width: 100%;
+    padding: 0 $sep-xs;
+    height: calc(100vh - 335px);
+
+    .text-presentation {
+        text-align: center;
+        margin-top: $sep-xs;
+    }
+    
+    .btn {
+        position: fixed;
+        bottom: 5px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+    }
+}

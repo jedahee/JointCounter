@@ -1,0 +1,20 @@
+html, body {
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    height: auto;
+}
+
+*::-webkit-scrollbar-thumb {
+    width: 7px;
+    background-color: $dark;
+    border-radius: $br-sm;
+}
+
+main.content {
+    position: relative;
+}
+
+.green_word {
+    color: $green;
+}

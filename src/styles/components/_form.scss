@@ -1,0 +1,54 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: $sep-xs;
+    
+    & > div {
+        width: 100%;
+        transition: .25s ease;
+
+        & > div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            column-gap: $sep-3xs;
+            margin-bottom: $sep-2xs - 3px;
+
+            span {
+                transition: .25s ease;
+
+            }
+        }
+
+        .username, .password {
+            border: 2px solid $dark;
+            border-radius: $br-md - 4px;
+            padding: .6rem $sep-2xs;
+            width: 100%;
+            transition: .25s ease;
+        }
+    }
+
+    .btn {
+        display: flex;
+        align-self: flex-end;
+        width: 100%;
+        min-height: 40px;
+        margin-top: $sep-md;
+    }
+
+    .username-container:focus .username,
+    .username-container:hover .username,
+    .password-container:focus .password,
+    .password-container:hover .password {
+        border: 2px solid $green;
+    }
+
+    .username-container:focus span,
+    .username-container:hover span,
+    .password-container:focus span,
+    .password-container:hover span {
+        color: $green;
+    }
+}

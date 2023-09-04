@@ -1,0 +1,65 @@
+<app-header-small></app-header-small>
+
+
+<div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
+    <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
+    <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
+</div>
+
+<main class="main-signin">
+    <h1>
+        <span class="green_word">{{'sign_word_upper' | translate}}</span>
+        <span>{{'in_word_upper' | translate}}</span>
+    </h1>
+
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="username-container">
+            <div>
+                <img class="icon-form-login" src="../../../assets/icons/user-02.svg" alt="User icon: ">
+                <span>{{'username' | translate}}</span>
+            </div>
+            <input required minlength="6" maxlength="50" formControlName="name" placeholder="Teddy023" type="text" class="username" name="name" id="name">
+        
+            <div *ngIf="loginForm.get('name')?.hasError('required') && !loginForm.controls['name'].pristine" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_1' | translate }}</p>
+            </div>
+            <div *ngIf="loginForm.get('name')?.hasError('minlength')" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_2' | translate }}</p>
+            </div>
+            <div *ngIf="loginForm.get('name')?.hasError('maxlength')" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_3' | translate }}</p>
+            </div>
+        </div>
+
+        <div class="password-container">
+            <div>
+                <img class="icon-form-login" src="../../../assets/icons/lock.svg" alt="Lock icon: ">
+                <span>{{'password' | translate}}</span>
+            </div>
+            <input type="password" required formControlName="password" minlength="6" maxlength="50" placeholder="*******" class="password" name="password" id="password">
+            
+            <div *ngIf="loginForm.get('password')?.hasError('required') && !loginForm.controls['password'].pristine" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_1' | translate }}</p>
+            </div>
+            <div *ngIf="loginForm.get('password')?.hasError('minlength')" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_2' | translate }}</p>
+            </div>
+            <div *ngIf="loginForm.get('password')?.hasError('maxlength')" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_3' | translate }}</p>
+            </div>
+        </div>
+
+        <button class="btn" [disabled]="!loginForm.valid" type="submit" [ngClass]="!loginForm.valid ? 'disabled' : ''">
+            {{'send' | translate}}
+        </button>
+    </form>
+    <a href="#" class="link" routerLink="/sign-up">{{'sign_up' | translate}}</a>
+    
+    
+</main>

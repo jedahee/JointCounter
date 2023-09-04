@@ -1,0 +1,27 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $sep-2xs;
+    background-color: $green;
+    border-radius: $br-md;
+    color: $light;
+    font-size: 15px;
+    transition: .25s ease;
+} 
+
+.btn:hover {
+    background-color: $green_hover;
+}
+
+.btn-double-arrow {
+    padding-left: $sep-xs;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn.disabled {
+    opacity: .5;
+    pointer-events: none;
+}

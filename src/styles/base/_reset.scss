@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-emphasis: none;
+    margin: 0;
+    padding: 0;
+}
+
+*::after, *::before {
+    box-sizing: border-box;
+}

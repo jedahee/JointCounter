@@ -1,0 +1,32 @@
+
+@font-face {
+    font-family: 'FM-R';
+    src: url('../../assets/fonts/FiraMonoRegular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'FM-M';
+    src: url('../../assets/fonts/FiraMonoMedium.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'CM-SB';
+    src: url('../../assets/fonts/CascadiaMonoSemiBold.otf')  format('opentype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'CM-B';
+    src: url('../../assets/fonts/CascadiaMonoBold.otf')  format('opentype'), /* Safari, Android, iOS */
+}
+
+*, *::after, *::before, input, select, option, table *, table {
+    font-family: 'FM-M', sans-serif;
+} 
+
+h1, h2 {
+    font-family: 'CM-B', Helvetica;
+}
+
+h3, h4, h5, h6 {
+    font-family: 'CM-SB', Helvetica;
+}
