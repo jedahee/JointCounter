@@ -24,4 +24,14 @@ export class AuthService {
   public me(token: string) {
     return this.http.post<any>(this.url + 'api/user/me', {token: token});
   }
+
+  public updateCurrency(idUser: string, currency: string, cigar_cost:string, paper_cost:string,joint_cost:string) {
+    let data = {
+      currency: currency,
+      cigar_cost:cigar_cost,
+      paper_cost:paper_cost,
+      joint_cost:joint_cost
+    }
+    return this.http.put<any>(this.url + 'api/admin/currency/'+idUser, data);
+  }
 }
