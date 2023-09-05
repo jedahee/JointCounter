@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PresentationComponent } from './pages/presentation/presentation.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { UpdateCurrencyComponent } from './pages/update-currency/update-currency.component';
+import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 
 const routes: Routes = [
   {
@@ -19,6 +21,16 @@ const routes: Routes = [
     path: "sign-up",
     component: SignUpComponent,
     data: {animation: 'isSignUp'}
+  },
+  {
+    path: "admin/currency",
+    component: UpdateCurrencyComponent,
+    data: {animation: 'isUpdateCurrency'}
+  },
+  {
+    path: "admin/home",
+    component: AdminHomeComponent,
+    data: {animation: 'isHome'}
   },
 ];
 

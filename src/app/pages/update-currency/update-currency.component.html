@@ -1,0 +1,101 @@
+<app-header-large></app-header-large>
+<div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
+    <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
+    <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
+</div>
+
+<main class="main-currency">
+    <div class="custom-select">
+        <h3>{{"text_h1_currency" | translate }}</h3>
+    
+        <div id="select-lang" (click)="changeStatus()">
+            <div class="preview">
+                <div class="euro {{currency_selected != 'euro' && 'hidden'}}">
+                    <img src="../../../assets/icons/currency-euro.svg" alt="Euro: ">
+                    <span>{{"euro_currency" | translate }}</span>
+                </div>
+        
+                <div class="dollar {{currency_selected != 'dollar' && 'hidden'}}">
+                    <img src="../../../assets/icons/currency-dollar.svg" alt="Dollar: ">
+                    <span>{{"dollar_currency" | translate }}</span>
+                </div>
+
+                <div class="libra {{currency_selected!= 'libra' && 'hidden'}}">
+                    <img src="../../../assets/icons/currency-pound.svg" alt="Libra: ">
+                    <span>{{"pound_currency" | translate }}</span>
+                </div>
+            </div>
+            <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
+        </div>
+    
+        <div class="options currency {{!hidden_options && 'hidden'}}">
+            <div class="euro {{currency_selected == 'euro' && 'disable'}}" (click)="selectCurrency('euro')">
+                <img src="../../../assets/icons/currency-euro.svg" alt="Euro: ">
+                <span>{{"euro_currency" | translate }}</span>
+            </div>
+    
+            <div class="dollar {{currency_selected == 'dollar' && 'disable'}}" (click)="selectCurrency('dollar')">
+                <img src="../../../assets/icons/currency-dollar.svg" alt="Dollar: ">
+                <span>{{"dollar_currency" | translate }}</span>
+            </div>
+
+            <div class="libra {{currency_selected == 'libra' && 'disable'}}" (click)="selectCurrency('libra')">
+                <img src="../../../assets/icons/currency-pound.svg" alt="Libra: ">
+                <span>{{"pound_currency" | translate }}</span>
+            </div>
+        </div>
+    </div>
+    <!--END SELECT CURRENCY-->
+
+    <form class="form" [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+        <div class="form-container cigar-cost-container">
+            <div>
+                <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
+                <img *ngIf="currency_selected == 'dollar'" class="icon-form-currency" src="../../../assets/icons/currency-dollar.svg" alt="Dollar icon: ">
+                <img *ngIf="currency_selected == 'libra'" class="icon-form-currency" src="../../../assets/icons/currency-pound.svg" alt="Pound icon: ">
+                <span>{{'quest_1_currency' | translate}}</span>
+            </div>
+            <input required formControlName="cigar_cost" placeholder="0.25" type="text" class="cigar_cost" name="cigar_cost" id="cigar_cost">
+        
+            <div *ngIf="currencyForm.get('cigar_cost')?.hasError('required') && !currencyForm.controls['cigar_cost'].pristine" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_1' | translate }}</p>
+            </div>
+        </div>
+
+        <div class="form-container paper-cost-container">
+            <div>
+                <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
+                <img *ngIf="currency_selected == 'dollar'" class="icon-form-currency" src="../../../assets/icons/currency-dollar.svg" alt="Dollar icon: ">
+                <img *ngIf="currency_selected == 'libra'" class="icon-form-currency" src="../../../assets/icons/currency-pound.svg" alt="Pound icon: ">
+                <span>{{'quest_2_currency' | translate}}</span>
+            </div>
+            <input required formControlName="paper_cost" placeholder="0.05" type="text" class="paper_cost" name="paper_cost" id="paper_cost">
+        
+            <div *ngIf="currencyForm.get('paper_cost')?.hasError('required') && !currencyForm.controls['paper_cost'].pristine" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_1' | translate }}</p>
+            </div>
+        </div>
+
+        <div class="form-container joint-cost-container">
+            <div>
+                <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
+                <img *ngIf="currency_selected == 'dollar'" class="icon-form-currency" src="../../../assets/icons/currency-dollar.svg" alt="Dollar icon: ">
+                <img *ngIf="currency_selected == 'libra'" class="icon-form-currency" src="../../../assets/icons/currency-pound.svg" alt="Pound icon: ">
+                <span>{{'quest_3_currency' | translate}}</span>
+            </div>
+            <input required formControlName="joint_cost" placeholder="1.00" type="text" class="joint_cost" name="joint_cost" id="joint_cost">
+        
+            <div *ngIf="currencyForm.get('joint_cost')?.hasError('required') && !currencyForm.controls['joint_cost'].pristine" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_1' | translate }}</p>
+            </div>
+        </div>
+
+        <button routerLink="/admin/home" class="btn btn-double-arrow">
+            <span>{{"text_btn_currency" | translate }}</span>
+            <img src="../../../assets/icons/double-arrow.svg" alt=">>">
+        </button>
+    </form>
+</main>

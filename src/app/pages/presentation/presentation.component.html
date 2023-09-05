@@ -19,7 +19,7 @@
             <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
         </div>
     
-        <div class="options {{!hidden_options && 'hidden'}}">
+        <div class="options lang {{!hidden_options && 'hidden'}}">
             <div class="en {{lang_selected == 'en' && 'disable'}}" (click)="changeLang('en')">
                 <img src="../../../assets/img/flag-britain.png" alt="English: ">
                 <span>{{"text_english" | translate }}</span>

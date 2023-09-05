@@ -21,7 +21,7 @@
             }
         }
 
-        .username, .password {
+        .username, .password, input[type="text"], input[type="password"] {
             border: 2px solid $dark;
             border-radius: $br-md - 4px;
             padding: .6rem $sep-2xs;
@@ -41,14 +41,26 @@
     .username-container:focus .username,
     .username-container:hover .username,
     .password-container:focus .password,
-    .password-container:hover .password {
+    .password-container:hover .password,
+    
+    .form-container:focus input[type="text"],
+    .form-container:hover input[type="text"],
+    .form-container:focus input[type="password"],
+    .form-container:hover input[type="password"]
+     {
         border: 2px solid $green;
     }
 
     .username-container:focus span,
     .username-container:hover span,
     .password-container:focus span,
-    .password-container:hover span {
+    .password-container:hover span,
+    
+    .form-container:focus span,
+    .form-container:hover span,
+    .form-container:focus span,
+    .form-container:hover span 
+    {
         color: $green;
     }
 }

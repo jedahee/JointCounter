@@ -32,7 +32,7 @@
         }
     }
     
-    .options {
+    .options.lang, .options.currency {
         display: flex;
         flex-direction: column;
         bottom: -90%;
@@ -44,6 +44,10 @@
         box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.14);
         width: 100%;
         position: absolute;
+    }
+
+    .options.currency {
+        bottom: -130%;
     }
 
     .en, .es {
@@ -74,6 +78,38 @@
     }
 
     .es.disable, .en.disable{
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    .euro, .dollar, .libra {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: $sep-2xs;
+        margin-bottom: $sep-2xs;
+        padding-left: $sep-2xs + 2px;
+        
+        img {
+            width: 32px;
+            
+        }
+
+    }
+
+    .euro:last-child, .dollar:last-child, .libra:last-child {
+        margin-bottom: inherit;
+    }
+
+    .preview .euro, .preview .dollar, .preview .libra {
+        margin-bottom: 0;
+    }
+
+    .options.hidden, .euro.hidden, .dollar.hidden, .libra.hidden {
+        display: none;
+    }
+
+    .euro.disable, .dollar.disable, .libra.disable{
         opacity: .5;
         pointer-events: none;
     }

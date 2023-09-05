@@ -20,4 +20,8 @@ export class AuthService {
 
     return this.http.post<any>(this.url + 'api/user/login', user);
   }
+
+  public me(token: string) {
+    return this.http.post<any>(this.url + 'api/user/me', {token: token});
+  }
 }

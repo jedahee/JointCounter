@@ -19,7 +19,7 @@ export class SignInComponent {
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
-        Validators.maxLength(50)          //Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
+        Validators.maxLength(50)
       ]),
       password: new FormControl('', [
         Validators.required,
@@ -41,11 +41,17 @@ export class SignInComponent {
       let user = this.loginForm.value;
       
       this.auth_service.login(user).subscribe(data => {
-        this.router.navigate(["admin/home"])
+        localStorage.setItem('user_jc', JSON.stringify({"id": data.user._id, "cost": false}));
+        localStorage.setItem('token_jc', data.data.token);
+        this.router.navigate(["admin/currency"])
       }, (err) => {
-        console.log(err);
+        if (err.status==400) {
+          this.error_msg = "popup_error_400_login";
+        }else{
+          this.error_msg = "popup_error_500";
+        }
         
-        this.error_msg = "popup_error_500";
+        
         setTimeout(()=>{
           this.error_msg = "";
         },3000)

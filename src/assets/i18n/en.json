@@ -17,10 +17,22 @@
     "confirm_password":"Confirm Password",
     "send":"Send",
 
+    "text_h1_currency":"Select your currency",
+    "euro_currency": "Euro",
+    "dollar_currency": "Dollar",
+    "pound_currency": "Pound",
+    "quest_1_currency": "How much money does a cigar cost?",
+    "quest_2_currency": "How much money does a rolling paper cost?",
+    "quest_3_currency": "How much money does a joint cost?",
+    "text_btn_currency": "Next",
+
     "error_1": "This field is required",
     "error_2": "The field must contain 6 characters at least",
     "error_3": "The field must contain maximum 50 characters",
     "error_4": "Password are different",
 
-    "popup_error_500": "Something failed"
+    "popup_error_500": "Something failed",
+    "popup_error_400_login": "Password or username is incorrect",
+    "popup_error_400_register": "This username already exists",
+    "popup_error_400_me": "Your session expired. Login Again"
 }

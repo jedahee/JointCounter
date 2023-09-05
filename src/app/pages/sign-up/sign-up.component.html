@@ -1,6 +1,6 @@
 <app-header-small></app-header-small>
 
-<div class="popup error" [ngClass]="error_msg!='' ? 'hidden' : ''">
+<div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
     <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
     <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
 </div>

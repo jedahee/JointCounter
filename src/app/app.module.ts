@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { UpdateCurrencyComponent } from './pages/update-currency/update-currency.component';
+import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -23,7 +25,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     PresentationComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    UpdateCurrencyComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,

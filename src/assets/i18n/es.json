@@ -17,11 +17,22 @@
     "confirm_password":"Confirmar contraseña",
     "send":"Enviar",
 
-
+    "text_h1_currency":"Selecciona tu moneda",
+    "euro_currency": "Euro",
+    "dollar_currency": "Dólar",
+    "pound_currency": "Libra",
+    "quest_1_currency": "¿Cuanto dinero te cuesta un cigarro?",
+    "quest_2_currency": "¿Cuanto dinero te cuesta un papelillo de liar?",
+    "quest_3_currency": "¿Cuanto dinero te cuesta un porro?",
+    "text_btn_currency": "Siguiente",
+    
     "error_1": "Este campo es obligatorio",
     "error_2": "Debe tener una longitud de 6 caracteres como mínimo",
     "error_3": "Debe tener una longitud de 50 caracteres como máximo",
     "error_4": "Las contraseñas no coinciden",
     
-    "popup_error_500": "Ocurrió un error"
+    "popup_error_500": "Ocurrió un error",
+    "popup_error_400_login": "Las credenciales son incorrectas",
+    "popup_error_400_register": "Este nombre de usuario ya está en uso",
+    "popup_error_400_me": "Tu sesión expiró"
 }
