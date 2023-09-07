@@ -2,6 +2,14 @@
     width: 20px;
 }
 
+.icon {
+    width: 25px;
+}
+
+.icon, .icon path {
+    transition: .25s ease;
+}
+
 .icon-form-currency {
     width: 30px;
 }

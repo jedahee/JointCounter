@@ -26,6 +26,12 @@
     "quest_3_currency": "How much money does a joint cost?",
     "text_btn_currency": "Next",
 
+    "latest_home_admin": "LASTEST",
+    "records_home_admin": "RECORDS",
+    "joint_word": "Joint",
+    "cigar_word": "Cigarrete",
+    "show_more": "Show more",
+
     "error_1": "This field is required",
     "error_2": "The field must contain 6 characters at least",
     "error_3": "The field must contain maximum 50 characters",

@@ -1,0 +1,47 @@
+.navigation {
+    position: fixed;
+    bottom: 0;
+    left: -10px;
+    right: -10px;
+    background-color: $dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $sep-sm;
+    height: 88px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+
+    .link-container {
+        height: 60px;
+        width: 60px;
+        transition: .25s ease;    
+        background-color: $light;
+        padding: $sep-xs;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: $sep-sm;
+        border-radius: $br-circle; 
+    }
+
+    .link-container:nth-child(2) {
+        margin-bottom: $sep-xl + .7rem;   
+    }
+}
+
+.link-container.active {
+    background-color: $green;
+}
+
+.link-container.active .icon, .link-container.active .icon path {
+    stroke: $light;
+}
+
+.link-container:hover {
+    background-color: $green_hover;
+}
+
+.link-container:hover .icon path {
+    stroke: $light;
+}

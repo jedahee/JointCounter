@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl, NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -41,7 +41,11 @@ export class SignInComponent {
       let user = this.loginForm.value;
       
       this.auth_service.login(user).subscribe(data => {
-        localStorage.setItem('user_jc', JSON.stringify({"id": data.user._id, "cost": false}));
+        if (localStorage.getItem("user_jc") && JSON.parse(localStorage.getItem("user_jc") || "").cost != undefined && JSON.parse(localStorage.getItem("user_jc") || "").cost != null)
+          localStorage.setItem('user_jc', JSON.stringify({"id": data.user._id, "cost": true }));
+        else
+          localStorage.setItem('user_jc', JSON.stringify({"id": data.user._id, "cost": false}));
+        
         localStorage.setItem('token_jc', data.data.token);
         this.router.navigate(["admin/currency"])
       }, (err) => {

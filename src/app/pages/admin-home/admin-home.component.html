@@ -1,1 +1,125 @@
-<p>admin-home works!</p>
+<app-header-small></app-header-small>
+
+<div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
+    <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
+    <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
+</div>
+
+<main class="main-admin-home">
+    <h1>
+        <span class="green_word">{{'latest_home_admin' | translate}}</span>
+        <br>
+        <span>{{'records_home_admin' | translate}}</span>
+    </h1>
+
+    <article class="content-admin-home">
+        
+        <div class="day">
+            <section class="date-container">
+                <span class="date">29-07-2023</span>
+                <hr>
+            </section>
+
+            <div class="registers">
+                <div class="data-container">
+                    <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
+                    <div class="info-data">
+                        <h3>{{'joint_word' | translate}}</h3>
+                        <p class="date_data"><span>29-07-2023</span> <span>12:02:59</span></p>
+                    </div>
+    
+                    <div class="del-container">
+                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
+                    </div>
+                </div>
+                <div class="data-container">
+                    <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
+                    <div class="info-data">
+                        <h3>{{'joint_word' | translate}}</h3>
+                        <p class="date_data"><span>29-07-2023</span> <span>12:02:59</span></p>
+                    </div>
+    
+                    <div class="del-container">
+                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
+                    </div>
+                </div>
+
+                <div class="data-container">
+                    <img class="icon" src="../../../assets/img/cigarrete.png" alt="Joint">
+                    <div class="info-data">
+                        <h3>{{'cigar_word' | translate}}</h3>
+                        <p class="date_data"><span>29-07-2023</span> <span>13:02:59</span></p>
+                    </div>
+    
+                    <div class="del-container">
+                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="day">
+            <section class="date-container">
+                <span class="date">29-07-2023</span>
+                <hr>
+            </section>
+
+            <div class="registers">
+                <div class="data-container">
+                    <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
+                    <div class="info-data">
+                        <h3>{{'joint_word' | translate}}</h3>
+                        <p class="date_data"><span>29-07-2023</span> <span>12:02:59</span></p>
+                    </div>
+    
+                    <div class="del-container">
+                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
+                    </div>
+                </div>
+                <div class="data-container">
+                    <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
+                    <div class="info-data">
+                        <h3>{{'joint_word' | translate}}</h3>
+                        <p class="date_data"><span>29-07-2023</span> <span>12:02:59</span></p>
+                    </div>
+    
+                    <div class="del-container">
+                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
+                    </div>
+                </div>
+
+                <div class="data-container">
+                    <img class="icon" src="../../../assets/img/cigarrete.png" alt="Joint">
+                    <div class="info-data">
+                        <h3>{{'cigar_word' | translate}}</h3>
+                        <p class="date_data"><span>29-07-2023</span> <span>13:02:59</span></p>
+                    </div>
+    
+                    <div class="del-container">
+                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <a class="link">{{'show_more' | translate}}</a>
+    </article>
+
+    <div class="add-container"[ngClass]="toggle_dropdown ? 'active' : ''" (click)="toggleDropwdown(undefined)">
+        <div class="add-joint">
+            <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
+        </div>
+        
+        <div class="add-dropdown">
+            <svg class="icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 8L8 24M8 8L24 24" stroke="#06B26B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                
+        </div>
+
+        <div class="add-cigar">
+            <img class="icon" src="../../../assets/img/cigarrete.png" alt="Cigarrete">
+        </div>
+    </div>
+    <app-navigation></app-navigation>
+</main>

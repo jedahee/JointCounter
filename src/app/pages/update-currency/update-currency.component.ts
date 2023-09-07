@@ -40,12 +40,14 @@ export class UpdateCurrencyComponent {
     let user = localStorage.getItem("user_jc")
     let token =localStorage.getItem("token_jc");
     
-    this.user_id = JSON.parse(user||'').id;
     if (token == "" || token == undefined || !user) {
        this.router.navigate(["sign-in"]);
-    } else {
+
+      } else {
+      this.user_id = JSON.parse(user||'').id;
+
       this.auth_service.me(token).subscribe(data=>{
-        if (JSON.parse(localStorage.getItem("user_jc") || "").cost) {
+        if (JSON.parse(localStorage.getItem("user_jc") || "").cost || JSON.parse(localStorage.getItem("user_jc") || "").cost == "true") {
           this.router.navigate(["admin/home"]);
         }
       }, err => {
