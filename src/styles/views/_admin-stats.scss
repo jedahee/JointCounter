@@ -1,0 +1,26 @@
+.main-admin-stats {
+    width: 100%;
+    min-height: calc(100vh - $sep-lg - 99px);
+    padding: 0 $sep-xs;
+    padding-bottom: 110px;
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        margin: auto auto $sep-xs auto;
+    }
+
+    .info_total {
+        margin-bottom: $sep-sm;
+
+        
+    }
+
+    .selects {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: calc($sep-xs - 5px);
+        margin-bottom: $sep-xs !important;
+    }
+}

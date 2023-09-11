@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { UpdateCurrencyComponent } from './pages/update-currency/update-currency.component';
 import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
+import { AdminStatsComponent } from './pages/admin-stats/admin-stats.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,7 +28,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SignInComponent,
     SignUpComponent,
     UpdateCurrencyComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    AdminStatsComponent
   ],
   imports: [
     BrowserModule,

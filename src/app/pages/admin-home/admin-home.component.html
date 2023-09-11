@@ -13,111 +13,48 @@
     </h1>
 
     <article class="content-admin-home">
-        
-        <div class="day">
+        <h3 *ngIf="oranges_displayed.length == 0">{{'no_records' | translate}}</h3>
+
+        <div *ngFor="let or of oranges_displayed" class="day">
             <section class="date-container">
-                <span class="date">29-07-2023</span>
+                <span class="date">{{or.date}}</span>
                 <hr>
             </section>
 
             <div class="registers">
-                <div class="data-container">
-                    <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
+                <div class="data-container" *ngFor="let or_c of or.content">
+                    <img class="icon" *ngIf="!or_c.isLight" src="../../../assets/img/joint.png" alt="Joint">
+                    <img class="icon" *ngIf="or_c.isLight" src="../../../assets/img/cigarrete.png" alt="Cigarrete">
+                    
                     <div class="info-data">
-                        <h3>{{'joint_word' | translate}}</h3>
-                        <p class="date_data"><span>29-07-2023</span> <span>12:02:59</span></p>
+                        <h3 *ngIf="!or_c.isLight">{{'joint_word' | translate}}</h3>
+                        <h3 *ngIf="or_c.isLight">{{'cigar_word' | translate}}</h3>
+                        <p class="date_data"><span>{{ or_c.date.split(" ")[0] }}</span> <span>{{ or_c.date.split(" ")[1] }}</span></p>
                     </div>
     
-                    <div class="del-container">
+                    <div class="del-container" (click)="deleteOrange(or_c._id)">
                         <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
                     </div>
-                </div>
-                <div class="data-container">
-                    <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
-                    <div class="info-data">
-                        <h3>{{'joint_word' | translate}}</h3>
-                        <p class="date_data"><span>29-07-2023</span> <span>12:02:59</span></p>
-                    </div>
-    
-                    <div class="del-container">
-                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
-                    </div>
-                </div>
-
-                <div class="data-container">
-                    <img class="icon" src="../../../assets/img/cigarrete.png" alt="Joint">
-                    <div class="info-data">
-                        <h3>{{'cigar_word' | translate}}</h3>
-                        <p class="date_data"><span>29-07-2023</span> <span>13:02:59</span></p>
-                    </div>
-    
-                    <div class="del-container">
-                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="day">
-            <section class="date-container">
-                <span class="date">29-07-2023</span>
-                <hr>
-            </section>
-
-            <div class="registers">
-                <div class="data-container">
-                    <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
-                    <div class="info-data">
-                        <h3>{{'joint_word' | translate}}</h3>
-                        <p class="date_data"><span>29-07-2023</span> <span>12:02:59</span></p>
-                    </div>
-    
-                    <div class="del-container">
-                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
-                    </div>
-                </div>
-                <div class="data-container">
-                    <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
-                    <div class="info-data">
-                        <h3>{{'joint_word' | translate}}</h3>
-                        <p class="date_data"><span>29-07-2023</span> <span>12:02:59</span></p>
-                    </div>
-    
-                    <div class="del-container">
-                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
-                    </div>
-                </div>
-
-                <div class="data-container">
-                    <img class="icon" src="../../../assets/img/cigarrete.png" alt="Joint">
-                    <div class="info-data">
-                        <h3>{{'cigar_word' | translate}}</h3>
-                        <p class="date_data"><span>29-07-2023</span> <span>13:02:59</span></p>
-                    </div>
-    
-                    <div class="del-container">
-                        <img class="icon" src="../../../assets/icons/trash.svg" alt="Delete">
-                    </div>
-                </div>
+                </div>            
             </div>
 
         </div>
 
-        <a class="link">{{'show_more' | translate}}</a>
+        <a (click)="getOranges()" *ngIf="oranges.length >= registers_per_load" class="link">{{'show_more' | translate}}</a>
     </article>
 
-    <div class="add-container"[ngClass]="toggle_dropdown ? 'active' : ''" (click)="toggleDropwdown(undefined)">
-        <div class="add-joint">
+    <div class="add-container"[ngClass]="toggle_dropdown ? 'active' : ''">
+        <div class="add-joint" (click)="addOrange(false)">
             <img class="icon" src="../../../assets/img/joint.png" alt="Joint">
         </div>
         
-        <div class="add-dropdown">
+        <div class="add-dropdown" (click)="toggleDropwdown(undefined)">
             <svg class="icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 8L8 24M8 8L24 24" stroke="#06B26B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>                
         </div>
 
-        <div class="add-cigar">
+        <div class="add-cigar" (click)="addOrange(true)">
             <img class="icon" src="../../../assets/img/cigarrete.png" alt="Cigarrete">
         </div>
     </div>

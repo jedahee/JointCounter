@@ -1,0 +1,47 @@
+.content-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: $sep-xs;
+
+    .joints_no, .money_no {
+        display: flex;
+        align-items: flex-start;
+        row-gap: $sep-2xs;
+        flex-direction: column;
+        width: 100%;
+
+        .joints_data, .cigar_data, .money_data {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            border: 2px solid $green;
+            border-radius: $br-2xl;
+            max-height: 36px;
+
+            .icon-container {
+                background-color: $dark;
+                border-radius: $br-circle;
+                padding: $sep-2xs + 3px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: calc(100% + 2px);
+                transform: translateX(-2px);
+            }
+
+            span {
+                text-align: center;
+                margin: auto;
+                transform: translateX(-10px);
+
+            }
+        }
+
+        .money_data .icon-container {
+            padding: $sep-2xs;
+        }
+
+    }
+}

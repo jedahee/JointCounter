@@ -1,0 +1,190 @@
+<app-header-small></app-header-small>
+
+<div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
+    <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
+    <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
+</div>
+
+<main class="main-admin-stats">
+    <h1>
+        <span class="green_word">LATEST</span>
+        <br>
+        <span>STATS</span>
+    </h1>
+
+    <section class="info_total">
+        <div class="separator_title">
+            <h3 class="green_word">Info.</h3>
+            <hr>
+        </div>
+
+        <div class="content-info">
+            <section>
+                <div class="separator_title">
+                    <h3>You smoked a total of </h3>
+                    <hr>
+                </div>
+                <div class="joints_no">
+
+                    <div class="joints_data">
+                        <div class="icon-container">
+                            <img class="icon-sm" src="../../../assets/img/joint.png" alt="Joint">
+                        </div>
+                        <span>17</span>
+                    </div>
+
+                    <div class="cigar_data">
+                        <div class="icon-container">
+                            <img class="icon-sm" src="../../../assets/img/cigarrete.png" alt="Cigarrete">
+                        </div>
+                        <span>25</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <section>
+                <div class="separator_title">
+                    <h3>You spent a total of </h3>
+                    <hr>
+                </div>
+                <div class="money_no">
+                    <div class="money_data">
+                        <div class="icon-container">
+                            <img class="icon" src="../../../assets/icons/currency-dollar.svg" alt="Dollar">
+                        </div>
+                        <span>23.25</span>
+                    </div>
+
+                    <div class="money_data">
+                        <div class="icon-container">
+                            <img class="icon" src="../../../assets/icons/currency-dollar.svg" alt="Dollar">
+                        </div>
+                        <span>45.25</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <nav class="filter-container">
+        <div class="separator_title">
+            <h3 class="green_word">Filter</h3>
+            <hr>
+        </div>
+
+        
+        <section class="selects">
+            <div class="custom-select year">
+        
+                <div class="select" (click)="changeStatus(true)">
+                    <div class="preview">
+                        <span class="option_pre {{year_selected != '-1' && 'hidden'}}">Año</span>
+                        <span class="option_pre {{year_selected != 'enero' && 'hidden'}}">Enero</span>
+                        <span class="option_pre {{year_selected != 'febrero' && 'hidden' }}">Febrero</span>
+                        <span class="option_pre {{year_selected != 'marzo' && 'hidden' }}">Marzo</span>
+                    </div>
+                    <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options_1 ? 'rotate' : ''" alt="chevron-down">
+                </div>
+            
+                <div class="options year {{!hidden_options_1 && 'hidden'}}">
+                    <span class="option {{year_selected == 'enero' && 'disable'}}">Enero</span>
+                    <span class="option {{year_selected == 'febrero' && 'disable' }}">Febrero</span>
+                    <span class="option {{year_selected == 'marzo' && 'disable' }}">Marzo</span>
+                </div>
+            </div>
+    
+            <div class="custom-select month">
+            
+                <div class="select" (click)="changeStatus(false)">
+                    <div class="preview">
+                        <span class="option_pre {{month_selected != '-1' && 'hidden'}}">Mes</span>
+                        <span *ngFor="let m of months; let i=index" class="option_pre {{month_selected != 'month_'+(i+1) && 'hidden'}}">{{m|translate}}</span>
+                    </div>
+                    <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
+                </div>
+            
+                <div class="options month {{!hidden_options && 'hidden'}}">
+                    <span *ngFor="let m of months; let i=index" (click)="selectMonth('month_'+(i+1))" class="option {{month_selected == 'month_'+(i+1) && 'disable'}}">{{m|translate}}</span>
+                    
+                </div>
+            </div>
+        </section>
+        
+    </nav>
+
+    <article class="months_content">
+        <div class="separator_title">
+            <h3>Analytics</h3>
+            <hr>
+        </div>
+
+        <section class="content">
+            <div class="card">
+                <div class="bg bg-1"></div>
+                <div class="bg bg-2"></div>
+                
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.22683 16.9509C3.04525 16.6634 2.95446 16.5196 2.90363 16.2979C2.86546 16.1313 2.86546 15.8687 2.90363 15.7021C2.95446 15.4804 3.04525 15.3366 3.22683 15.0491C4.72737 12.6731 9.19387 6.66667 16.0005 6.66667C22.8072 6.66667 27.2737 12.6731 28.7742 15.0491C28.9558 15.3366 29.0466 15.4804 29.0974 15.7021C29.1356 15.8687 29.1356 16.1313 29.0974 16.2979C29.0466 16.5196 28.9558 16.6634 28.7742 16.9509C27.2737 19.3269 22.8072 25.3333 16.0005 25.3333C9.19387 25.3333 4.72737 19.3269 3.22683 16.9509Z" stroke="#212120" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.0005 20C18.2097 20 20.0005 18.2091 20.0005 16C20.0005 13.7909 18.2097 12 16.0005 12C13.7914 12 12.0005 13.7909 12.0005 16C12.0005 18.2091 13.7914 20 16.0005 20Z" stroke="#212120" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+                <div class="title_info">
+                    <h1>June</h1>
+                    <h3>2023</h3>
+                </div>
+
+                <div class="content-info">
+                    <section>
+                        <div class="separator_title">
+                            <h3>You smoked </h3>
+                            <hr>
+                        </div>
+                        <div class="joints_no">
+        
+                            <div class="joints_data">
+                                <div class="icon-container">
+                                    <img class="icon-sm" src="../../../assets/img/joint.png" alt="Joint">
+                                </div>
+                                <span>17</span>
+                            </div>
+        
+                            <div class="cigar_data">
+                                <div class="icon-container">
+                                    <img class="icon-sm" src="../../../assets/img/cigarrete.png" alt="Cigarrete">
+                                </div>
+                                <span>25</span>
+                            </div>
+        
+                        </div>
+                    </section>
+        
+                    <section>
+                        <div class="separator_title">
+                            <h3>You spent </h3>
+                            <hr>
+                        </div>
+                        <div class="money_no">
+                            <div class="money_data">
+                                <div class="icon-container">
+                                    <img class="icon-sm" src="../../../assets/icons/currency-dollar.svg" alt="Dollar">
+                                </div>
+                                <span>23.25</span>
+                            </div>
+        
+                            <div class="money_data">
+                                <div class="icon-container">
+                                    <img class="icon-sm" src="../../../assets/icons/currency-dollar.svg" alt="Dollar">
+                                </div>
+                                <span>45.25</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </article>
+
+
+    <app-navigation></app-navigation>
+</main>

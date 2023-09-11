@@ -9,7 +9,7 @@
     align-items: flex-start;
     gap: $sep-2xs;
 
-    #select-lang {
+    #select-lang,.select {
         border-radius: $br-md;
         background-color: $light;
         border: 2px solid $green;
@@ -32,18 +32,27 @@
         }
     }
     
-    .options.lang, .options.currency {
+    .options.lang, .options.currency, .options.month, .options.year {
         display: flex;
         flex-direction: column;
         bottom: -90%;
         background-color: $light;
         border-radius: $br-md;
         padding: $sep-xs;
+        z-index: 2;
         -webkit-box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.14);
         -moz-box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.14);
         box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.14);
         width: 100%;
         position: absolute;
+    }
+
+    .options.year {
+        bottom: -200%;
+    }
+
+    .options.month {
+        bottom: -340px;
     }
 
     .options.currency {
@@ -65,7 +74,7 @@
 
     }
 
-    .en:last-child, .es:last-child {
+    .en:last-child, .es:last-child, .options.month > span:last-child {
         margin-bottom: inherit;
     }
 
@@ -73,7 +82,7 @@
         margin-bottom: 0;
     }
 
-    .options.hidden, .en.hidden, .es.hidden {
+    .option_pre.hidden, .en.hidden, .es.hidden {
         display: none;
     }
 
@@ -101,7 +110,7 @@
         margin-bottom: inherit;
     }
 
-    .preview .euro, .preview .dollar, .preview .libra {
+    .preview .euro, .preview .dollar, .preview .libra, .preview > span {
         margin-bottom: 0;
     }
 
@@ -109,8 +118,26 @@
         display: none;
     }
 
-    .euro.disable, .dollar.disable, .libra.disable{
+    .euro.disable, .dollar.disable, .libra.disable, .options.month > span.disable{
         opacity: .5;
         pointer-events: none;
+    }
+}
+
+.custom-select.month, .custom-select.year {
+    padding: $sep-3xs 0 !important;
+
+    .options.month, .options.year {
+        row-gap: $sep-2xs;
+    }
+
+    .options.month > span, .options.year > span {
+        transition: all .25s ease;
+    }
+
+    .options.month > span:hover, .options.year > span:hover,
+    .options.month > span:focus, .options.year > span:focus {
+        color: $green;
+
     }
 }

@@ -20,6 +20,10 @@
         overflow-y: auto;
         padding-bottom: $sep-3xl;
 
+        &>h3 {
+            opacity: .5;
+        }
+
         .day, .day > .registers {
             width: 100%;
             display: flex;
@@ -78,6 +82,7 @@
                 }
 
                 .del-container {
+                    z-index: 5;
                     transition: .25s ease;
                     pointer-events: none;
                     opacity: 0;
@@ -101,6 +106,7 @@
                 &:hover .del-container,
                 &:focus .del-container {
                     opacity: 1;
+                    pointer-events: all;
                     transform: scale(1);
                 }
             }
@@ -159,6 +165,9 @@
             position: absolute;
             z-index: 1;
             transition: .25s ease;
+            -webkit-box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.2);
+            -moz-box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.2);
+            box-shadow: 2px 4px 10px 0px rgba(33,33,32,0.2); 
 
             .icon{
                 width: 20px;

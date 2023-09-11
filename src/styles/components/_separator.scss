@@ -1,0 +1,23 @@
+.separator_title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: $sep-2xs;
+    margin-bottom: $sep-xs;
+
+    h3{
+        font-size: $fs-sm;
+        text-align: start;
+    }
+
+    hr {
+        width: 100%;
+        border: 1.5px solid $green;    }
+}
+
+.content-info .separator_title{
+    h3 {
+        font-size: $fs-xs;
+    }
+}

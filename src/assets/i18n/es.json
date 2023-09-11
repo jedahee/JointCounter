@@ -31,7 +31,8 @@
     "joint_word": "Porro",
     "cigar_word": "Cigarro",
     "show_more": "Mostrar más",
-    
+    "no_records": "No existen registros",
+
     "error_1": "Este campo es obligatorio",
     "error_2": "Debe tener una longitud de 6 caracteres como mínimo",
     "error_3": "Debe tener una longitud de 50 caracteres como máximo",
@@ -40,5 +41,19 @@
     "popup_error_500": "Ocurrió un error",
     "popup_error_400_login": "Las credenciales son incorrectas",
     "popup_error_400_register": "Este nombre de usuario ya está en uso",
-    "popup_error_400_me": "Tu sesión expiró"
+    "popup_error_400_me": "Tu sesión expiró",
+    "popup_error_400_admin_home": "No se han podido obtener los registros",
+
+    "month_1": "Enero",
+    "month_2": "Febrero",
+    "month_3": "Marzo",
+    "month_4": "Abril",
+    "month_5": "Mayo",
+    "month_6": "Junio",
+    "month_7": "Julio",
+    "month_8": "Agosto",
+    "month_9": "Septiembre",
+    "month_10": "Octubre",
+    "month_11": "Noviembre",
+    "month_12": "Diciembre"
 }

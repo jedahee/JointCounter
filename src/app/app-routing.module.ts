@@ -5,6 +5,7 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { UpdateCurrencyComponent } from './pages/update-currency/update-currency.component';
 import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
+import { AdminStatsComponent } from './pages/admin-stats/admin-stats.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,11 @@ const routes: Routes = [
     path: "admin/home",
     component: AdminHomeComponent,
     data: {animation: 'isHome'}
+  },
+  {
+    path: "admin/analytics",
+    component: AdminStatsComponent,
+    data: {animation: 'isAnalytics'}
   },
 ];
 

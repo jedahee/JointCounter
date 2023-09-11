@@ -19,6 +19,8 @@
 @import './styles/components/links';
 @import './styles/components/alert';
 @import './styles/components/navigation';
+@import './styles/components/separator';
+@import './styles/components/extra-info';
 
 /* VIEWS */
 @import './styles/views/lang';
@@ -26,5 +28,6 @@
 @import './styles/views/sign-up';
 @import './styles/views/admin-currency';
 @import './styles/views/admin-home';
+@import './styles/views/admin-stats';
 
 /* LAYOUT */

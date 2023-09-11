@@ -12,7 +12,13 @@ export class NavigationComponent {
   public pages_allowed = ["home", "analytics", "profile"]
   
   constructor(private router: Router) {
-    this.active_name = this.pages_allowed[0];
+    let length = this.router.url.split("/").length;
+    let page = this.router.url.split("/")[length-1]
+    
+    if (this.pages_allowed.includes(page)) {
+      this.active_name = page;
+    }
+  
   }
 
   setActive(value: string) {
