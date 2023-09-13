@@ -30,7 +30,6 @@ export class SignInComponent {
   }
 
   ngOnInit(): void {
-    
     this.translate_s.use(localStorage.getItem("lang_jc") || 'en');
   }
 
@@ -39,8 +38,21 @@ export class SignInComponent {
       this.isSubmitted = true;      
 
       let user = this.loginForm.value;
-      
+      let paper_cost = localStorage.getItem("paper_cost_jc")
+      let cigar_cost = localStorage.getItem("cigar_cost_jc")
+      let joint_cost = localStorage.getItem("joint_cost_jc")
+      let currency = localStorage.getItem("currency_jc")
+
       this.auth_service.login(user).subscribe(data => {
+        if(paper_cost == null || cigar_cost == null || joint_cost == null || currency == undefined) {
+          if (data.user.paper_cost != "" && data.user.joint_cost != "" && data.user.cigar_cost != "" && data.user.currency != "") {
+            localStorage.setItem("currency_jc", data.user.currency);
+            localStorage.setItem("joint_cost_jc", data.user.joint_cost);
+            localStorage.setItem("paper_cost_jc", data.user.paper_cost);
+            localStorage.setItem("cigar_cost_jc", data.user.cigar_cost);
+          }
+
+        }
         if (localStorage.getItem("user_jc") && JSON.parse(localStorage.getItem("user_jc") || "").cost != undefined && JSON.parse(localStorage.getItem("user_jc") || "").cost != null)
           localStorage.setItem('user_jc', JSON.stringify({"id": data.user._id, "cost": true }));
         else

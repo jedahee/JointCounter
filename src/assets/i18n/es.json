@@ -33,6 +33,17 @@
     "show_more": "Mostrar más",
     "no_records": "No existen registros",
 
+    "latest_home_stats": "ÚLTIMOS",
+    "stats_home_stats": "ANÁLISIS",
+    "your_smoked_total": "Fumaste un total de",
+    "your_spent_total": "Gastaste un total de",
+    "your_smoked": "Fumaste",
+    "your_spent": "Gastaste",
+    "filter": "Filtro",
+    "analytics": "Estadísticas",
+    "month": "Mes",
+    "year": "Año",
+
     "error_1": "Este campo es obligatorio",
     "error_2": "Debe tener una longitud de 6 caracteres como mínimo",
     "error_3": "Debe tener una longitud de 50 caracteres como máximo",

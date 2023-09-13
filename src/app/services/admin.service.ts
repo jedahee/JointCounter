@@ -22,4 +22,9 @@ export class AdminService {
   delOrange(id: string) {
     return this.http.delete<any>(this.url + 'api/admin/orange/' + id);
   }
+
+  getOrangesByUser(idUser: string) {
+
+    return this.http.get<any>(this.url + 'api/admin/orange/' + idUser);
+  }
 }

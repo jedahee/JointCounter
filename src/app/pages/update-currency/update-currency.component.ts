@@ -17,10 +17,13 @@ export class UpdateCurrencyComponent {
   public currencyForm!: FormGroup;
   public dots_no: number = 0;
   public user_id: string = "";
+  public paper_cost_storage: string = "";
+  public joint_cost_storage: string = "";
+  public cigar_cost_storage: string = "";
+  public currency_storage: string = "";
 
   constructor( private formBuilder: FormBuilder, private auth_service: AuthService, private router: Router, private translate_s: TranslateService) {
     this.currencies = ["euro", "dollar", "libra"];
-    this.currency_selected = "euro";
     this.currencyForm = this.formBuilder.group({
       cigar_cost: new FormControl('', [
         Validators.required,
@@ -34,6 +37,15 @@ export class UpdateCurrencyComponent {
                 
       ])
     });
+
+    this.currencyForm.patchValue({
+      cigar_cost: localStorage.getItem("cigar_cost_jc") || '0.25',
+      paper_cost: localStorage.getItem("paper_cost_jc") || '0.05',
+      joint_cost: localStorage.getItem("joint_cost_jc") || '1'
+    });
+    
+    this.currency_selected = localStorage.getItem("currency_jc") || 'euro';
+
   }
 
   ngOnInit(): void {
@@ -116,6 +128,10 @@ export class UpdateCurrencyComponent {
       let currency_obj = this.currencyForm.value;
       this.auth_service.updateCurrency(this.user_id, this.currency_selected, currency_obj.cigar_cost, currency_obj.paper_cost, currency_obj.joint_cost).subscribe(data=> {
         let user = JSON.parse(localStorage.getItem("user_jc")||"");
+        localStorage.setItem("currency_jc", this.currency_selected);
+        localStorage.setItem("joint_cost_jc", currency_obj.joint_cost);
+        localStorage.setItem("paper_cost_jc", currency_obj.paper_cost);
+        localStorage.setItem("cigar_cost_jc", currency_obj.cigar_cost);
         user.cost = true;
         localStorage.setItem("user_jc", JSON.stringify(user));
         this.router.navigate(["admin/home"]);

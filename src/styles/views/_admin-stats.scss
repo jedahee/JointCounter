@@ -23,4 +23,24 @@
         column-gap: calc($sep-xs - 5px);
         margin-bottom: $sep-xs !important;
     }
+
+    .months_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+            width: 100%;
+            gap: 1.5rem;
+
+            &>h3 {
+                text-align: center;
+                margin: $sep-2xs auto;
+                opacity: .5;
+            }
+        }
+    }
 }

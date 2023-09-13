@@ -1,8 +1,13 @@
 .content-info {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     column-gap: $sep-xs;
+    width: 100%;
+    
+    &>section {
+        width: 100%;
+    }
 
     .joints_no, .money_no {
         display: flex;
@@ -44,4 +49,18 @@
         }
 
     }
+}
+
+.card .content-info > section > div:not(.separator_title) > div {
+    max-height: 30px;
+} 
+
+.card .content-info > section > div:not(.separator_title) > .joints_data .icon-container img,
+.card .content-info > section > div:not(.separator_title) > .cigar_data .icon-container img {
+    width: 17px;
+}
+
+.card .content-info > section > div:not(.separator_title) > .joints_data .icon-container,
+.card .content-info > section > div:not(.separator_title) > .cigar_data .icon-container {
+    padding: 9px;
 }
