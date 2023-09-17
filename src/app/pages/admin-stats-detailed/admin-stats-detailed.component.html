@@ -1,0 +1,231 @@
+<app-header-small></app-header-small>
+
+<div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
+    <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
+    <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
+</div>
+
+<main class="main-admin-stats-detailed">
+    <h1>
+        <span class="green_word">{{(month|translate).toUpperCase()}}</span>
+        <br>
+        <span>{{year}}</span>
+    </h1>
+
+    <section class="info_total">
+        <div class="separator_title">
+            <h3 class="green_word">Info.</h3>
+            <hr>
+        </div>
+
+        <div class="content-info">
+            <section>
+                <div class="separator_title">
+                    <h3>{{'your_smoked_total'|translate}}</h3>
+                    <hr>
+                </div>
+                <div class="joints_no">
+
+                    <div class="joints_data">
+                        <div class="icon-container">
+                            <img class="icon-sm" src="../../../assets/img/joint.png" alt="Joint">
+                        </div>
+                        <span>{{max_joints}}</span>
+                    </div>
+
+                    <div class="cigar_data">
+                        <div class="icon-container">
+                            <img class="icon-sm" src="../../../assets/img/cigarrete.png" alt="Cigarrete">
+                        </div>
+                        <span>{{max_cigar}}</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <section>
+                <div class="separator_title">
+                    <h3>{{'your_spent_total'|translate}}</h3>
+                    <hr>
+                </div>
+                <div class="money_no">
+                    <div class="money_data">
+                        <div class="icon-container">
+                            <img class="icon" *ngIf="currency=='euro'" src="../../../assets/icons/currency-euro.svg" alt="Euro">
+                            <img class="icon" *ngIf="currency=='dollar'" src="../../../assets/icons/currency-dollar.svg" alt="Dollar">
+                            <img class="icon" *ngIf="currency=='libra'" src="../../../assets/icons/currency-pound.svg" alt="Pound">
+                        </div>
+                        <span>{{ ((max_joints*joint_cost) + (max_joints*cigar_cost) + (max_joints*paper_cost)).toFixed(2) }}</span>
+                    </div>
+
+                    <div class="money_data">
+                        <div class="icon-container">
+                            <img class="icon" *ngIf="currency=='euro'" src="../../../assets/icons/currency-euro.svg" alt="Euro">
+                            <img class="icon" *ngIf="currency=='dollar'" src="../../../assets/icons/currency-dollar.svg" alt="Dollar">
+                            <img class="icon" *ngIf="currency=='libra'" src="../../../assets/icons/currency-pound.svg" alt="Pound">
+                        </div>
+                        <span>{{ (max_cigar * cigar_cost).toFixed(2) }}</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="total_spent_container">
+            <div class="separator_title sub">
+                <h3>{{'total_spent' | translate}}</h3>
+                <hr>
+            </div>
+
+            <div class="money_data">
+                <div class="icon-container">
+                    <img class="icon" *ngIf="currency=='euro'" src="../../../assets/icons/currency-euro.svg" alt="Euro">
+                    <img class="icon" *ngIf="currency=='dollar'" src="../../../assets/icons/currency-dollar.svg" alt="Dollar">
+                    <img class="icon" *ngIf="currency=='libra'" src="../../../assets/icons/currency-pound.svg" alt="Pound">
+                </div>
+                <span>{{ ((max_cigar * cigar_cost) + ((max_joints*joint_cost) + ((max_joints*cigar_cost) + (max_joints*paper_cost)))).toFixed(2) }}</span>
+            </div>
+        </div>
+    </section>
+
+
+    
+    
+    <section class="graphics_container">
+        <div class="separator_title">
+            <h3 class="green_word">{{'graphics_word'|translate}}</h3>
+            <hr>
+        </div>
+
+        <div class="custom-select">
+            <h3>{{"graphics_to_show" | translate }}</h3>
+        
+            <div id="select-stats" (click)="changeStatus()">
+                <div class="preview">
+                    <div class="cigar {{graphic_selected == 'joint' && 'hidden'}}">
+                        <img src="../../../assets/img/cigarrete.png" alt="Cigarrete: ">
+                        <span>{{"cigar_word" | translate }}</span>
+                    </div>
+            
+                    <div class="joint {{graphic_selected == 'cigar' && 'hidden'}}">
+                        <img src="../../../assets/img/joint.png" alt="Joint: ">
+                        <span>{{"joint_word" | translate }}</span>
+                    </div>
+                </div>
+                <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
+            </div>
+        
+            <div class="options graphic {{!hidden_options && 'hidden'}}">
+                <div class="cigar {{graphic_selected == 'cigar' && 'disable'}}" (click)="changeGraphic('cigar')">
+                    <img src="../../../assets/img/cigarrete.png" alt="Cigarrete: ">
+                    <span>{{"cigar_word" | translate }}</span>
+                </div>
+        
+                <div class="joint {{graphic_selected == 'joint' && 'disable'}}" (click)="changeGraphic('joint')">
+                    <img src="../../../assets/img/joint.png" alt="Joint: ">
+                    <span>{{"joint_word" | translate }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="graphics-bar card" (click)="setLarge()">
+            <div class="bg bg-1"></div>
+
+            <svg class="icon" [ngClass]="isLarge ? 'rotate' : ''" width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_10_934)">
+                <path d="M15.1364 25.4298V4.21664M15.1364 25.4298L18.672 21.8943M15.1364 25.4298L11.6009 21.8943M15.1364 4.21664L11.6009 7.75217M15.1364 4.21664L18.672 7.75217" stroke="#212120" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_10_934">
+                <rect width="20" height="20" fill="white" transform="translate(0.994324 14.8232) rotate(-45)"/>
+                </clipPath>
+                </defs>
+            </svg>
+
+            <div class="title_info">
+                <h1 *ngIf="graphic_selected == 'cigar'">{{'cigar_word_upper'|translate}}</h1>
+                <h1 *ngIf="graphic_selected == 'joint'">{{'joint_word_upper'|translate}}</h1>
+            </div>
+
+            <div class="content" *ngIf="graphic_selected == 'joint'" [ngClass]="isLarge ? 'large' : ''">
+                <div class="days">
+                    <div class="separator_title">
+                        <h3>{{'day_word'|translate}}</h3>
+                        <hr>
+                    </div>
+
+                    <section>
+                        <div class="day" *ngFor="let jc of joints_graphic">
+                            <span>{{jc.day}}</span>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="visual-data">
+                    <div class="separator_title">
+                        <h3>{{'visual_data'|translate}}</h3>
+                        <hr>
+                    </div>
+
+                    <section>
+                        <div class="bar" *ngFor="let jc of joints_graphic">
+                            <div class="bar-filled" [style]="jc.quantity > 0 ? 'width: '+ ((jc.quantity*100)/max_joints) + '%' : 'width: 0%'"></div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="no_container">
+                    <div class="separator_title">
+                        <h3>No.</h3>
+                        <hr>
+                    </div>
+
+                    <section>
+                        <span class="no" *ngFor="let jc of joints_graphic">{{jc.quantity}}</span>
+                    </section>
+                </div>
+            </div>
+            
+            <div class="content" *ngIf="graphic_selected == 'cigar'" [ngClass]="isLarge ? 'large' : ''">
+                <div class="days">
+                    <div class="separator_title">
+                        <h3>{{'day_word'|translate}}</h3>
+                        <hr>
+                    </div>
+
+                    <section>
+                        <div class="day" *ngFor="let cg of cigar_graphic">
+                            <span>{{cg.day}}</span>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="visual-data">
+                    <div class="separator_title">
+                        <h3>{{'visual_data'|translate}}</h3>
+                        <hr>
+                    </div>
+
+                    <section>
+                        <div class="bar" *ngFor="let cg of cigar_graphic">
+                            <div class="bar-filled" [style]="cg.quantity > 0 ? 'width: '+ ((cg.quantity*100)/max_cigar) + '%' : 'width: 0%'"></div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="no_container">
+                    <div class="separator_title">
+                        <h3>No.</h3>
+                        <hr>
+                    </div>
+
+                    <section>
+                        <span class="no" *ngFor="let cg of cigar_graphic">{{cg.quantity}}</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <app-navigation></app-navigation>
+</main>

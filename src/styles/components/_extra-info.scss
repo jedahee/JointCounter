@@ -9,7 +9,7 @@
         width: 100%;
     }
 
-    .joints_no, .money_no {
+    .joints_no, .money_no, &+.total_spent_container {
         display: flex;
         align-items: flex-start;
         row-gap: $sep-2xs;
@@ -51,16 +51,13 @@
     }
 }
 
-.card .content-info > section > div:not(.separator_title) > div {
-    max-height: 30px;
-} 
-
-.card .content-info > section > div:not(.separator_title) > .joints_data .icon-container img,
-.card .content-info > section > div:not(.separator_title) > .cigar_data .icon-container img {
-    width: 17px;
-}
-
-.card .content-info > section > div:not(.separator_title) > .joints_data .icon-container,
-.card .content-info > section > div:not(.separator_title) > .cigar_data .icon-container {
-    padding: 9px;
+.info_total .total_spent_container {
+    .separator_title.sub {
+        align-items: center;
+        margin-top: $sep-xs;
+        margin-bottom: .5rem;
+        h3 {
+            font-size: 1em;
+        }
+    }
 }

@@ -70,3 +70,17 @@
 .card:focus svg path {
     stroke: $green;
 } 
+
+.card .content-info > section > div:not(.separator_title) > div {
+    max-height: 30px;
+} 
+
+.card .content-info > section > div:not(.separator_title) > .joints_data .icon-container img,
+.card .content-info > section > div:not(.separator_title) > .cigar_data .icon-container img {
+    width: 17px;
+}
+
+.card .content-info > section > div:not(.separator_title) > .joints_data .icon-container,
+.card .content-info > section > div:not(.separator_title) > .cigar_data .icon-container {
+    padding: 9px;
+}

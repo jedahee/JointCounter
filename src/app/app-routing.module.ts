@@ -6,6 +6,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { UpdateCurrencyComponent } from './pages/update-currency/update-currency.component';
 import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 import { AdminStatsComponent } from './pages/admin-stats/admin-stats.component';
+import { AdminStatsDetailedComponent } from './pages/admin-stats-detailed/admin-stats-detailed.component';
+import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,16 @@ const routes: Routes = [
     path: "admin/analytics",
     component: AdminStatsComponent,
     data: {animation: 'isAnalytics'}
+  },
+  {
+    path: "admin/analytics/:year/:month",
+    component: AdminStatsDetailedComponent,
+    data: {animation: 'isAnalyticsDetailed'}
+  },
+  {
+    path: "admin/profile",
+    component: AdminProfileComponent,
+    data: {animation: 'isProfile'}
   },
 ];
 

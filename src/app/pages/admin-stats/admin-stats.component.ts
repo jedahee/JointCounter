@@ -123,7 +123,6 @@ export class AdminStatsComponent {
 
       this.years_range.sort()
       this.month_cards_copy_aux = this.month_cards;
-
     }, err => {
       this.error_msg = "popup_error_500";
         

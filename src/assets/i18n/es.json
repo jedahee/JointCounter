@@ -32,6 +32,8 @@
     "cigar_word": "Cigarro",
     "show_more": "Mostrar más",
     "no_records": "No existen registros",
+    "joint_word_upper": "PORROS",
+    "cigar_word_upper": "CIGARROS",
 
     "latest_home_stats": "ÚLTIMOS",
     "stats_home_stats": "ANÁLISIS",
@@ -39,10 +41,16 @@
     "your_spent_total": "Gastaste un total de",
     "your_smoked": "Fumaste",
     "your_spent": "Gastaste",
+    "total_spent": "Total gastado",
     "filter": "Filtro",
     "analytics": "Estadísticas",
     "month": "Mes",
     "year": "Año",
+
+    "graphics_word":"Gráficos",
+    "graphics_to_show":"Gráfico a mostrar",
+    "day_word":"Día",
+    "visual_data":"Datos gráficos",
 
     "error_1": "Este campo es obligatorio",
     "error_2": "Debe tener una longitud de 6 caracteres como mínimo",

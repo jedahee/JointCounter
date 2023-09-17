@@ -27,4 +27,9 @@ export class AdminService {
 
     return this.http.get<any>(this.url + 'api/admin/orange/' + idUser);
   }
+
+  getOrangesByUserYearMonth(idUser: string, year:string, month:string) {
+
+    return this.http.get<any>(this.url + 'api/admin/orange/filter/' + idUser + '/'+year+'/' +month);
+  }
 }

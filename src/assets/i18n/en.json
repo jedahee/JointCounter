@@ -32,6 +32,8 @@
     "cigar_word": "Cigarrete",
     "show_more": "Show more",
     "no_records": "There are no records",
+    "joint_word_upper": "JOINTS",
+    "cigar_word_upper": "CIGARRETES",
 
     "latest_home_stats": "LATEST",
     "stats_home_stats": "STATS",
@@ -39,10 +41,16 @@
     "your_spent_total": "You spent a total of",
     "your_smoked": "You smoked",
     "your_spent": "You spent",
+    "total_spent": "Total spent",
     "filter": "Filter",
     "analytics": "Analytics",
     "month": "Month",
     "year": "Year",
+
+    "graphics_word":"Graphics",
+    "graphics_to_show":"Graphics to show",
+    "day_word":"Day",
+    "visual_data":"Graphic Data",
 
     "error_1": "This field is required",
     "error_2": "The field must contain 6 characters at least",

@@ -16,6 +16,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { UpdateCurrencyComponent } from './pages/update-currency/update-currency.component';
 import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 import { AdminStatsComponent } from './pages/admin-stats/admin-stats.component';
+import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
+import { AdminStatsDetailedComponent } from './pages/admin-stats-detailed/admin-stats-detailed.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -29,7 +31,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     SignUpComponent,
     UpdateCurrencyComponent,
     AdminHomeComponent,
-    AdminStatsComponent
+    AdminStatsComponent,
+    AdminProfileComponent,
+    AdminStatsDetailedComponent
   ],
   imports: [
     BrowserModule,

@@ -14,9 +14,13 @@ export class NavigationComponent {
   constructor(private router: Router) {
     let length = this.router.url.split("/").length;
     let page = this.router.url.split("/")[length-1]
+    let page_detailed = this.router.url.split("/")[length-3]
     
     if (this.pages_allowed.includes(page)) {
       this.active_name = page;
+    } else {
+      if (this.pages_allowed.includes(page_detailed))
+        this.active_name = page_detailed;
     }
   
   }

@@ -9,7 +9,7 @@
     align-items: flex-start;
     gap: $sep-2xs;
 
-    #select-lang,.select {
+    #select-lang,.select,#select-stats {
         border-radius: $br-md;
         background-color: $light;
         border: 2px solid $green;
@@ -32,7 +32,7 @@
         }
     }
     
-    .options.lang, .options.currency, .options.month, .options.year {
+    .options.graphic, .options.lang, .options.currency, .options.month, .options.year {
         display: flex;
         flex-direction: column;
         bottom: -90%;
@@ -47,19 +47,17 @@
         position: absolute;
     }
 
-    .options.year {
-        bottom: -200%;
+    .options.year, .options.month {
+        bottom: inherit;
+        top: 100%;
     }
 
-    .options.month {
-        bottom: -340px;
+    .options.graphic, .options.currency, .options.lang {
+        bottom: inherit;
+        top: 95%;
     }
 
-    .options.currency {
-        bottom: -130%;
-    }
-
-    .en, .es {
+    .en, .es, .cigar, .joint {
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -78,17 +76,36 @@
         margin-bottom: inherit;
     }
 
-    .preview .es, .preview .en {
+    .preview .es, .preview .en, .preview .cigar, .preview .joint {
         margin-bottom: 0;
     }
 
-    .option_pre.hidden, .en.hidden, .es.hidden {
+    .option_pre.hidden, .en.hidden, .es.hidden, .joint.hidden, .cigar.hidden {
         display: none;
     }
 
-    .es.disable, .en.disable{
+    .es.disable, .en.disable, .joint.disable, .cigar.disable{
         opacity: .5;
         pointer-events: none;
+    }
+
+    .joint, .cigar {
+        column-gap: calc($sep-2xs + 5px);
+        img {
+            width: 24px;
+        }
+    }
+
+    .preview .cigar {
+        img {
+            transform: translateY(-3px);
+        }
+    }
+
+    .options .cigar {
+        img {
+            transform: translateY(-5px);
+        }
     }
 
     .euro, .dollar, .libra {
