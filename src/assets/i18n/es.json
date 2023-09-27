@@ -52,6 +52,16 @@
     "day_word":"Día",
     "visual_data":"Datos gráficos",
 
+    "profile_word": "PERFIL DE",
+    "title_profile_lang": "Actualizar idioma",
+    "subtitle_profile_lang":"Actualiza tu idioma",
+    "title_profile_currency":"Actualiza tu moneda y precios",
+    "subtitle_profile_currency":"Actualiza tu moneda",
+    "update_word": "Actualizar",
+    "log_out": "Cerrar sesión",
+    "del_account": "Eliminar cuenta",
+    "mention": "Iconos extraidos de",
+
     "error_1": "Este campo es obligatorio",
     "error_2": "Debe tener una longitud de 6 caracteres como mínimo",
     "error_3": "Debe tener una longitud de 50 caracteres como máximo",
@@ -62,6 +72,8 @@
     "popup_error_400_register": "Este nombre de usuario ya está en uso",
     "popup_error_400_me": "Tu sesión expiró",
     "popup_error_400_admin_home": "No se han podido obtener los registros",
+
+    "popup_success_default": "La acción se realizó correctamente",
 
     "month_1": "Enero",
     "month_2": "Febrero",

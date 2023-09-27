@@ -1,0 +1,108 @@
+.main-admin-profile {
+    width: 100%;
+    min-height: calc(100vh - $sep-lg - 99px);
+    padding: 0 $sep-xs;
+    padding-bottom: 110px;
+
+    h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>div {
+            position: relative;
+            
+            img {
+                padding: 3px;
+                position: absolute;
+                bottom: 5px;
+                right: 20px;
+                background-color: $green;
+                border-radius: $br-circle;
+                transition: .25s ease;
+            }
+
+            img.hidden {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            img:hover {
+                background-color: $green_hover;
+                transform: scale(1.1);
+            }
+
+            .green_word {
+                font-size: 40px;
+                resize: none;
+                overflow: hidden;
+                box-sizing: border-box;
+                width: 100%;
+                max-width: 100%;
+                text-align: center;
+                height: 55px;
+                
+            }
+        }
+
+        span.first {
+            order: -1;
+        }
+
+        span:not(.green_word) {
+            font-size: 30px;
+        }
+
+        text-align: center;
+        margin-left: auto;       
+        margin-right: auto;   
+        margin-bottom: $sep-md;    
+    }
+
+    .separator_title {
+        margin-bottom: 0;
+    }
+
+    .separator_title.mt {
+        margin-top: $sep-xs;
+    }
+
+    .custom-select {
+        h3 {
+            font-size: 16px;
+        }
+    }
+
+    .form .btn {
+        margin-top: $sep-2xs;
+    }
+
+    .btn-warning {
+        width: 100%;
+        margin: $sep-lg auto $sep-xs auto;
+    }
+
+    .mention, .link {
+        text-align: center;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .link {
+        margin-bottom: $sep-lg;
+    }
+
+    .mention {
+        opacity: .7;
+
+        a {
+            color: $dark;
+        }
+
+        a::after {
+            background-color: $dark;
+            opacity: .5;
+        }
+    }
+}

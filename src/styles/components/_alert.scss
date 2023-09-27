@@ -12,9 +12,56 @@
     align-items: center;    
     column-gap: .5rem;
     transition: opacity .25s ease;
+    z-index: 9;
 
     .msg{
         font-size: 14px;
+    }
+}
+
+.popup.confirm {
+    display: flex;
+    flex-direction: column;
+    padding: ($sep-2xs + 5px) $sep-xs;
+    background-color: $dark;
+    border-radius: $br-lg;
+
+    .icon {
+        width: 27px;
+    }
+
+    &>div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: $sep-xs;
+
+        span {
+            color: $red;
+            font-size: 15px;
+            font-weight: lighter;
+        }
+    }
+    &>div:nth-child(1) {
+        margin-bottom: $sep-xs;
+    }
+
+    &>div:nth-child(2) {
+        justify-content: center;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        button.btn {
+            border-radius: $br-sm;
+        }
+
+        button:not(.btn) {
+            background-color: transparent;
+            color: $red;
+            font-size: 15px;
+        }
     }
 }
 

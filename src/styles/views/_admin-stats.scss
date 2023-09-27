@@ -1,5 +1,6 @@
 .main-admin-stats {
     width: 100%;
+    transition: .3s ease;
     min-height: calc(100vh - $sep-lg - 99px);
     padding: 0 $sep-xs;
     padding-bottom: 110px;
@@ -41,4 +42,12 @@
             }
         }
     }
+}
+
+.main-admin-stats.more_padding {
+    padding-bottom: 210px;
+}
+
+.main-admin-stats.more_padding_0 {
+    padding-bottom: 340px;
 }

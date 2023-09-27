@@ -88,7 +88,12 @@ export class AdminStatsDetailedComponent {
       this.calculateMax();
 
     }, err=>{
-      console.log(err)
+      this.error_msg = "popup_error_500";
+        
+      setTimeout(()=>{
+        this.error_msg = "";
+        this.router.navigate(["sign-in"]);
+      },3000)
     })
   }
 

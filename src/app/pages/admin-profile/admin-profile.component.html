@@ -1,1 +1,173 @@
-<p>admin-profile works!</p>
+<app-header-small></app-header-small>
+
+<div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
+    <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
+    <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
+</div>
+
+<div class="popup success" [ngClass]="success_msg!='' ? '' : 'hidden'">
+    <img src="../../../assets/icons/check-white.svg" alt="Chequeado:">
+    <span class="msg">{{ success_msg!="" ? (success_msg|translate) : ''}}</span>
+</div>
+
+<div class="popup confirm" [ngClass]="!confirm_del_account ? 'hidden' : ''">
+    <div>
+        <img class="icon" src="../../../assets/icons/alert-circle.svg" alt="Alert:">
+        <span>Are you sure you want to delete this account?</span>
+    </div>
+    <div>
+        <button (click)="delAccount()">Confirm</button>
+        <button (click)="setConfirmDelAccount()" class="btn">Cancel</button>
+    </div>
+</div>
+
+<main class="main-admin-profile">
+    <h1>
+        <div>
+            <textarea (keyup)="name_edited()" type="text" [value]="name_user" [(ngModel)]="name_user" class="green_word" maxlength="30" minlength="1" required></textarea>
+            <img [ngClass]="is_name_edit ? '' : 'hidden'" (click)="updateName($event)" src="../../../assets/icons/check-white.svg" alt="Save">
+        </div>
+        <span [ngClass]="lang_selected=='es' ? 'first': ''">{{'profile_word'|translate}}</span>
+    </h1>
+
+    <div class="separator_title">
+        <h3 class="green_word">{{'title_profile_lang'|translate}}</h3>
+        <hr>
+    </div>
+    <div class="custom-select">
+        <h3>{{'subtitle_profile_lang'|translate}}</h3>
+    
+        <div id="select-lang" (click)="changeStatus(false)">
+            <div class="preview">
+                <div class="en {{lang_selected == 'es' && 'hidden'}}">
+                    <img src="../../../assets/img/flag-britain.png" alt="English: ">
+                    <span>{{"text_english" | translate }}</span>
+                </div>
+        
+                <div class="es {{lang_selected == 'en' && 'hidden'}}">
+                    <img src="../../../assets/img/flag-spain.png" alt="Spanish: ">
+                    <span>{{"text_spanish" | translate }}</span>
+                </div>
+            </div>
+            <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
+        </div>
+    
+        <div class="options lang {{!hidden_options && 'hidden'}}">
+            <div class="en {{lang_selected == 'en' && 'disable'}}" (click)="changeLang('en')">
+                <img src="../../../assets/img/flag-britain.png" alt="English: ">
+                <span>{{"text_english" | translate }}</span>
+            </div>
+    
+            <div class="es {{lang_selected == 'es' && 'disable'}}" (click)="changeLang('es')">
+                <img src="../../../assets/img/flag-spain.png" alt="Spanish: ">
+                <span>{{"text_spanish" | translate }}</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="separator_title mt">
+        <h3 class="green_word">{{'title_profile_currency'|translate}}</h3>
+        <hr>
+    </div>
+    <div class="custom-select">
+    
+        <h3>{{'subtitle_profile_currency'|translate}}</h3>
+        <div id="select-lang" (click)="changeStatus(true)">
+            <div class="preview">
+                <div class="euro {{currency_selected != 'euro' && 'hidden'}}">
+                    <img src="../../../assets/icons/currency-euro.svg" alt="Euro: ">
+                    <span>{{"euro_currency" | translate }}</span>
+                </div>
+        
+                <div class="dollar {{currency_selected != 'dollar' && 'hidden'}}">
+                    <img src="../../../assets/icons/currency-dollar.svg" alt="Dollar: ">
+                    <span>{{"dollar_currency" | translate }}</span>
+                </div>
+
+                <div class="libra {{currency_selected!= 'libra' && 'hidden'}}">
+                    <img src="../../../assets/icons/currency-pound.svg" alt="Libra: ">
+                    <span>{{"pound_currency" | translate }}</span>
+                </div>
+            </div>
+            <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options_1 ? 'rotate' : ''" alt="chevron-down">
+        </div>
+    
+        <div class="options currency {{!hidden_options_1 && 'hidden'}}">
+            <div class="euro {{currency_selected == 'euro' && 'disable'}}" (click)="selectCurrency('euro')">
+                <img src="../../../assets/icons/currency-euro.svg" alt="Euro: ">
+                <span>{{"euro_currency" | translate }}</span>
+            </div>
+    
+            <div class="dollar {{currency_selected == 'dollar' && 'disable'}}" (click)="selectCurrency('dollar')">
+                <img src="../../../assets/icons/currency-dollar.svg" alt="Dollar: ">
+                <span>{{"dollar_currency" | translate }}</span>
+            </div>
+
+            <div class="libra {{currency_selected == 'libra' && 'disable'}}" (click)="selectCurrency('libra')">
+                <img src="../../../assets/icons/currency-pound.svg" alt="Libra: ">
+                <span>{{"pound_currency" | translate }}</span>
+            </div>
+        </div>
+    </div>
+    <!--END SELECT CURRENCY-->
+
+    <form class="form" [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+        <div class="form-container cigar-cost-container">
+            <div>
+                <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
+                <img *ngIf="currency_selected == 'dollar'" class="icon-form-currency" src="../../../assets/icons/currency-dollar.svg" alt="Dollar icon: ">
+                <img *ngIf="currency_selected == 'libra'" class="icon-form-currency" src="../../../assets/icons/currency-pound.svg" alt="Pound icon: ">
+                <span>{{'quest_1_currency' | translate}}</span>
+            </div>
+            <input [placeholder]="cigar_cost_storage" (keypress)="isANumber($event)" required formControlName="cigar_cost" type="text" class="cigar_cost" name="cigar_cost" id="cigar_cost">
+        
+            <div *ngIf="currencyForm.get('cigar_cost')?.hasError('required') && !currencyForm.controls['cigar_cost'].pristine" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_1' | translate }}</p>
+            </div>
+        </div>
+
+        <div class="form-container paper-cost-container">
+            <div>
+                <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
+                <img *ngIf="currency_selected == 'dollar'" class="icon-form-currency" src="../../../assets/icons/currency-dollar.svg" alt="Dollar icon: ">
+                <img *ngIf="currency_selected == 'libra'" class="icon-form-currency" src="../../../assets/icons/currency-pound.svg" alt="Pound icon: ">
+                <span>{{'quest_2_currency' | translate}}</span>
+            </div>
+            <input [placeholder]="paper_cost_storage" (keypress)="isANumber($event)" required formControlName="paper_cost" type="text" class="paper_cost" name="paper_cost" id="paper_cost">
+        
+            <div *ngIf="currencyForm.get('paper_cost')?.hasError('required') && !currencyForm.controls['paper_cost'].pristine" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_1' | translate }}</p>
+            </div>
+        </div>
+
+        <div class="form-container joint-cost-container">
+            <div>
+                <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
+                <img *ngIf="currency_selected == 'dollar'" class="icon-form-currency" src="../../../assets/icons/currency-dollar.svg" alt="Dollar icon: ">
+                <img *ngIf="currency_selected == 'libra'" class="icon-form-currency" src="../../../assets/icons/currency-pound.svg" alt="Pound icon: ">
+                <span>{{'quest_3_currency' | translate}}</span>
+            </div>
+            <input [placeholder]="joint_cost_storage" (keypress)="isANumber($event)" required formControlName="joint_cost" type="text" class="joint_cost" name="joint_cost" id="joint_cost">
+        
+            <div *ngIf="currencyForm.get('joint_cost')?.hasError('required') && !currencyForm.controls['joint_cost'].pristine" class="error-msg-container">
+                <img src="../../../assets/icons/alert-circle.svg" alt="Alerta:">
+                <p>{{ 'error_1' | translate }}</p>
+            </div>
+        </div>
+
+        <button [disabled]="!currencyForm.valid" type="submit" [ngClass]="!currencyForm.valid ? 'disabled' : ''" class="btn">
+            <span>{{"update_word" | translate }}</span>
+        </button>
+    </form>
+
+    <button class="btn btn-warning" (click)="log_out($event)">
+        {{'log_out'|translate}}
+    </button>
+    <p (click)="setConfirmDelAccount()" class="link link-warning">{{'del_account'|translate}}</p>
+    <p class="mention">{{'mention'|translate}} <a class="link" target="_blank" href="https://www.flaticon.es/">Flaticon</a></p>
+
+    <app-navigation></app-navigation>
+</main>

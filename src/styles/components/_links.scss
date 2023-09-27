@@ -25,3 +25,19 @@
     width: 100%;
     background-color: $green_hover;
 }
+
+.link-warning {
+    color: $red;
+}
+
+.link-warning:hover {
+    color: $red_hover;
+}
+
+.link-warning::after {
+    background-color: $red;
+}
+
+.link-warning:hover::after {
+    background-color: $red_hover;
+}

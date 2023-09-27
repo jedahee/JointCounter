@@ -5,7 +5,7 @@
     <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
 </div>
 
-<main class="main-admin-stats">
+<main class="main-admin-stats"  [ngClass]="[(hidden_options && month_cards.length == 1) ? 'more_padding' : '', (hidden_options && month_cards.length == 0) ? 'more_padding_0' : '']">
     <h1>
         <span class="green_word">{{'latest_home_stats'|translate}}</span>
         <br>

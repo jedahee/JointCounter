@@ -32,4 +32,21 @@ export class AdminService {
 
     return this.http.get<any>(this.url + 'api/admin/orange/filter/' + idUser + '/'+year+'/' +month);
   }
+
+  delUser(idUser:string) {
+    return this.http.delete<any>(this.url + 'api/admin/user/delete/' + idUser);
+  }
+
+  updateName(idUser:string, name:string) {
+    let data = {
+      name: name
+    }
+
+    return this.http.put<any>(this.url + 'api/admin/user/update/' + idUser, data)
+  }
+
+  getName(idUser:string) {
+    
+    return this.http.get<any>(this.url + 'api/admin/user/name/' + idUser)
+  }
 }

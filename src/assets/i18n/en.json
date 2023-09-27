@@ -52,6 +52,16 @@
     "day_word":"Day",
     "visual_data":"Graphic Data",
 
+    "profile_word": "PROFILE",
+    "title_profile_lang": "Update lang",
+    "subtitle_profile_lang":"Update your lang",
+    "title_profile_currency":"Update currency and prices",
+    "subtitle_profile_currency":"Update your currency",
+    "update_word": "Update",
+    "log_out": "Log out",
+    "del_account": "Delete account",
+    "mention": "Icons extracted of",
+
     "error_1": "This field is required",
     "error_2": "The field must contain 6 characters at least",
     "error_3": "The field must contain maximum 50 characters",
@@ -62,6 +72,8 @@
     "popup_error_400_register": "This username already exists",
     "popup_error_400_me": "Your session expired. Login Again",
     "popup_error_400_admin_home": "Records could not be obtained",
+    
+    "popup_success_default": "The action was performed correctly",
 
     "month_1": "January",
     "month_2": "Fabruary",

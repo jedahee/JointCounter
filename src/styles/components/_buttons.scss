@@ -21,6 +21,15 @@
     align-items: center;
 }
 
+.btn-warning {
+    padding: $sep-2xs + 4px;
+    background-color: $red;
+}
+
+.btn-warning:hover {
+    background-color: $red_hover;
+}
+
 .btn.disabled {
     opacity: .5;
     pointer-events: none;
