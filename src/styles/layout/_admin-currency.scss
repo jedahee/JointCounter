@@ -1,0 +1,25 @@
+@media screen and (min-width: 470px) {
+    .main-currency {
+        padding-left: $sep-xl;   
+        padding-right: $sep-xl;   
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-currency {
+        margin-top: $sep-2xl;
+        margin-bottom: $sep-2xl;
+        padding: $sep-xs $sep-xl;
+        padding-bottom: $sep-md;
+        border-radius:$br-lg;
+        box-shadow: 2px 5px 10px 0px rgba(33, 33, 32, 0.15);
+
+        h3 {
+            margin: auto;
+            margin-bottom: $sep-2xs;
+        }
+    }
+    .decorate {
+        display: block;
+    }
+}

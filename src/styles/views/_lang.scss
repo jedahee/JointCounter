@@ -2,10 +2,13 @@
     width: 100%;
     padding: 0 $sep-xs;
     height: calc(100vh - 335px);
-
+    max-width: 545px;
+    margin: auto;
+    
     .text-presentation {
         text-align: center;
         margin-top: $sep-xs;
+        opacity: .5;
     }
     
     .btn {
@@ -14,5 +17,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 90%;
+        max-width: 455px;
+        cursor: pointer;
     }
 }

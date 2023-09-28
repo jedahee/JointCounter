@@ -5,11 +5,22 @@ html, body {
     height: auto;
 }
 
-*::-webkit-scrollbar-thumb {
-    width: 7px;
-    background-color: $dark;
+*::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb {
+    width: 8px;
+    background-color: #2121206a;
     border-radius: $br-sm;
 }
+
+*::-webkit-scrollbar {
+    width: 8px;
+    background-color: $light;
+    
+}
+
+body *::-webkit-scrollbar {
+    width: 4px;
+}
+
 
 main.content {
     position: relative;
@@ -17,4 +28,24 @@ main.content {
 
 .green_word {
     color: $green;
+}
+
+.decorate {
+    display: none;
+    position: fixed;
+    top: 50%;
+    height: 400px;
+    width: 70px;
+    background-color: $dark;
+    transform: translateY(-40%);
+    border-radius: 100%;
+    transition: .3s ease;
+}
+
+.decorate-right {
+    right: -35px;
+}
+
+.decorate-left {
+    left: -35px;
 }

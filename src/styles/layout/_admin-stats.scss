@@ -1,0 +1,62 @@
+@media screen and (min-width: 470px) {
+    .main-admin-stats {
+        padding-left: $sep-xl;   
+        padding-right: $sep-xl;   
+
+        .card {
+            padding: 10px 1.5rem 1rem 1.5rem;
+        }      
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-admin-stats {
+        padding-bottom: inherit;
+        max-width: none;
+        padding-left: calc($sep-xl + 69px);
+        justify-items: flex-end;
+        grid-auto-rows: 150px;
+        display: grid;
+        margin-top: -80px;
+        column-gap: $sep-lg;
+        grid-template-columns: 1fr 1fr 270px;
+        grid-template-areas: "title title title "
+                             "analytics analytics filterA"
+                             "analytics analytics info";
+
+        &>h1 {
+            padding-right: calc($sep-xs + 55px);
+            grid-area: title;
+
+            span:nth-child(1) {
+                padding-right: 10px;
+            }
+
+            br {
+                display: none;
+            }
+        }
+
+
+
+        .info_total {
+            grid-area: info;
+            width: 100%;
+        }
+
+        .filter-container {
+            width: 100%;
+            grid-area: filterA;
+        }
+
+        .months_content {
+            grid-area: analytics;
+
+            .content {
+                justify-items: flex-start;
+                max-height: 600px;
+                overflow-y: auto;
+            }
+        }
+    }
+}

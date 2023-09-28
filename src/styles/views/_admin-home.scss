@@ -3,7 +3,9 @@
     min-height: calc(100vh - $sep-lg - 100px);
     padding: 0 $sep-xs;
     padding-bottom: $sep-lg;
-
+    max-width: 545px;
+    margin: auto;
+    
     h1 {
         font-size: 40px;
         text-align: center;
@@ -19,7 +21,7 @@
         height: calc(100vh - 350px);
         overflow-y: auto;
         padding-bottom: $sep-3xl;
-
+        
         &>h3 {
             opacity: .5;
         }
@@ -83,6 +85,7 @@
 
                 .del-container {
                     z-index: 5;
+                    cursor: pointer;
                     transition: .25s ease;
                     pointer-events: none;
                     opacity: 0;
@@ -132,6 +135,7 @@
         align-items: center;
 
         .add-dropdown {
+            cursor: pointer;
             width: 50px;
             height: 50px;
             background-color: $light;
@@ -159,6 +163,7 @@
             border-radius: $br-circle;
             height: 40px;
             width: 40px;
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;

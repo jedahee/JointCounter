@@ -3,13 +3,16 @@
     min-height: calc(100vh - $sep-lg - 99px);
     padding: 0 $sep-xs;
     padding-bottom: 110px;
+    max-width: 545px;
+    margin: auto;
 
     h1 {
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        
         &>div {
+            width: 270px;
             position: relative;
             
             img {

@@ -1,0 +1,22 @@
+@media screen and (min-width: 470px) {
+    .header-large, .header-small {
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 100%;
+    }
+
+    .header-small {
+        max-height: 130px;
+        
+        img {
+            margin-top: $sep-sm;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header-large {
+        .title {
+            font-size: 51px;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@media screen and (min-width: 470px) {
+    .main-signin {
+        padding: 0 $sep-xl;   
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .main-signin {
+        margin-top: $sep-2xl + 2rem;
+        padding: $sep-xs $sep-xl;
+        border-radius:$br-lg;
+        box-shadow: 2px 5px 10px 0px rgba(33, 33, 32, 0.15);
+
+    }
+    .decorate {
+        display: block;
+    }
+}
