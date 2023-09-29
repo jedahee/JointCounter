@@ -3,6 +3,8 @@
     min-height: calc(100vh - $sep-lg - 99px);
     padding: 0 $sep-xs;
     padding-bottom: 110px;
+    max-width: 545px;
+    margin: auto;
 
     h1 {
 
@@ -35,7 +37,9 @@
 
     .graphics-bar {
         transition: all .3s ease;
-        
+        width: 100%;
+        max-width: inherit;
+
         svg {
             transition: all .3s ease;
         }
@@ -122,7 +126,7 @@
 
         .content.large {
             transition: all .3s ease;
-            height: max-content;
+            height: max-content !important;
             max-height: max-content;
 
         }

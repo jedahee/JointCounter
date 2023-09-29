@@ -1,0 +1,63 @@
+@media screen and (min-width: 470px) {
+    .main-admin-stats-detailed {
+        padding-left: $sep-xl;   
+        padding-right: $sep-xl;       
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-admin-stats-detailed {
+        padding-bottom: $sep-lg;
+        max-width: none;
+        padding-left: calc($sep-xl + 69px);
+        justify-items: flex-start;
+        display: grid;
+        column-gap: $sep-md;
+        grid-template-columns: 1fr 270px;
+        grid-template-areas: "title title"
+                             "stats info"
+                             "stats info";
+
+        &>h1 {
+            padding-right: calc($sep-xs + 55px);
+            grid-area: title;
+
+            span:nth-child(1) {
+                padding-right: 10px;
+            }
+
+            br {
+                display: none;
+            }
+        }
+
+        .graphics_container {
+            margin-top: 0;
+            grid-area: stats;
+            width: 100%;
+
+            .separator_title {
+                align-items: center;
+                h3 {
+                    text-align: center;
+                }
+            }
+
+            .graphics-bar .content {
+                height: 350px;
+            }
+        }
+
+        .info_total {
+            width: 100%;
+            grid-area: info;
+        }
+
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main-admin-stats-detailed {
+        grid-template-columns: 1fr 400px;
+    }
+}
