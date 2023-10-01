@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -19,6 +18,7 @@ import { AdminStatsComponent } from './pages/admin-stats/admin-stats.component';
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 import { AdminStatsDetailedComponent } from './pages/admin-stats-detailed/admin-stats-detailed.component';
 
+// Function for allow i18n
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -43,15 +43,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
+    TranslateModule.forRoot({ // For translate
+      loader: { 
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
     })
   ],
-  providers: [
+  providers: [ // Intercept requests
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,

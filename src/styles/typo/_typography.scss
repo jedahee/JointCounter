@@ -1,4 +1,4 @@
-
+/* ALL FONTS (DOWNLOAD) */
 @font-face {
     font-family: 'FM-R';
     src: url('../../assets/fonts/FiraMonoRegular.ttf')  format('truetype'), /* Safari, Android, iOS */
@@ -19,6 +19,7 @@
     src: url('../../assets/fonts/CascadiaMonoBold.otf')  format('opentype'), /* Safari, Android, iOS */
 }
 
+/* FONT FAMILIES DEPPENDING OF TAG */
 *, *::after, *::before, input, select, option, table *, table {
     font-family: 'FM-M', sans-serif;
 } 

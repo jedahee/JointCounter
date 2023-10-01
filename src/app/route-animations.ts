@@ -1,3 +1,6 @@
+// TS FOR PAGE TRANSITIONS
+
+// IMPORTS
 import {
     trigger,
     transition,
@@ -12,9 +15,9 @@ import {
 // Basic
 
 export const fader = trigger('routeAnimations', [
-        transition('* <=> *', [
-            query(':enter, :leave', [
-                style({
+        transition('* <=> *', [ // CONDITIONS
+            query(':enter, :leave', [ // TRIGGERS
+                style({ // STYLES...
                     position: 'absolute',
                     left: 0,
                     width: '100%',
@@ -25,13 +28,13 @@ export const fader = trigger('routeAnimations', [
                 
             ], { optional: true }),
 
-            query(':enter', [
-                animate('600ms ease',
-                    style({
+            query(':enter', [ // TRIGGER
+                animate('600ms ease', // TIME AND TRANSITION TYPE 
+                    style({ // STYLES...
                         opacity: 1,
                         transform: 'scale(1)',
                     })
                 )
-            ], { optional: true })
+            ], { optional: true }) // FOR FIX ERROR IN CONSOLE
         ]),
     ]);

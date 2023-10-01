@@ -1,25 +1,34 @@
+<!-- SMALL HEADER -->
 <app-header-small></app-header-small>
 
+<!-- ERROR POPUP -->
 <div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
     <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
     <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
 </div>
 
+<!-- MAIN PAGE -->
 <main class="main-admin-stats-detailed">
+    
+    <!-- TITLE -->
     <h1>
         <span class="green_word">{{(month|translate).toUpperCase()}}</span>
         <br>
         <span>{{year}}</span>
     </h1>
 
+    <!-- TOTAL INFO -->
     <section class="info_total">
+        <!-- SEPARATOR -->
         <div class="separator_title">
             <h3 class="green_word">Info.</h3>
             <hr>
         </div>
 
+        <!-- CIGAR/JOINT INFO -->
         <div class="content-info">
             <section>
+                <!-- SEPARATOR -->
                 <div class="separator_title">
                     <h3>{{'your_smoked_total'|translate}}</h3>
                     <hr>
@@ -44,10 +53,13 @@
             </section>
 
             <section>
+                <!-- SEPARATOR -->
                 <div class="separator_title">
                     <h3>{{'your_spent_total'|translate}}</h3>
                     <hr>
                 </div>
+
+                <!-- MONEY INFO -->
                 <div class="money_no">
                     <div class="money_data">
                         <div class="icon-container">
@@ -70,6 +82,7 @@
             </section>
         </div>
 
+        <!-- TOTAL SPENT DATA -->
         <div class="total_spent_container">
             <div class="separator_title sub">
                 <h3>{{'total_spent' | translate}}</h3>
@@ -89,13 +102,14 @@
 
 
     
-    
+    <!-- GRAPHICS CONTAINER -->
     <section class="graphics_container">
         <div class="separator_title">
             <h3 class="green_word">{{'graphics_word'|translate}}</h3>
             <hr>
         </div>
 
+        <!-- CUSTOM GRAPHIC DROPDOWN -->
         <div class="custom-select">
             <h3>{{"graphics_to_show" | translate }}</h3>
         
@@ -114,6 +128,7 @@
                 <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
             </div>
         
+            <!-- OPTIONS OF CUSTOM DROPDOWN -->
             <div class="options graphic {{!hidden_options && 'hidden'}}">
                 <div class="cigar {{graphic_selected == 'cigar' && 'disable'}}" (click)="changeGraphic('cigar')">
                     <img src="../../../assets/img/cigarrete.png" alt="Cigarrete: ">
@@ -127,6 +142,7 @@
             </div>
         </div>
 
+        <!-- GRAPHIC -->
         <div class="graphics-bar card" (click)="setLarge()">
             <div class="bg bg-1"></div>
 
@@ -141,12 +157,15 @@
                 </defs>
             </svg>
 
+            <!-- TITLE -->
             <div class="title_info">
                 <h1 *ngIf="graphic_selected == 'cigar'">{{'cigar_word_upper'|translate}}</h1>
                 <h1 *ngIf="graphic_selected == 'joint'">{{'joint_word_upper'|translate}}</h1>
             </div>
 
+            <!-- JOINT GRAPHIC -->
             <div class="content" *ngIf="graphic_selected == 'joint'" [ngClass]="isLarge ? 'large' : ''">
+                <!-- DAYS COLUMN -->
                 <div class="days">
                     <div class="separator_title">
                         <h3>{{'day_word'|translate}}</h3>
@@ -160,6 +179,7 @@
                     </section>
                 </div>
 
+                <!-- BARS COLUMN -->
                 <div class="visual-data">
                     <div class="separator_title">
                         <h3>{{'visual_data'|translate}}</h3>
@@ -173,6 +193,7 @@
                     </section>
                 </div>
 
+                <!-- NUMBER COLUMN -->
                 <div class="no_container">
                     <div class="separator_title">
                         <h3>No.</h3>
@@ -185,6 +206,7 @@
                 </div>
             </div>
             
+            <!-- CIGAR GRAPHIC -->
             <div class="content" *ngIf="graphic_selected == 'cigar'" [ngClass]="isLarge ? 'large' : ''">
                 <div class="days">
                     <div class="separator_title">
@@ -227,5 +249,6 @@
 
     </section>
 
+    <!-- BOTTOM MENU NAVIGATION -->
     <app-navigation></app-navigation>
 </main>

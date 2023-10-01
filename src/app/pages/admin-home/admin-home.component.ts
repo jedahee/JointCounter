@@ -9,22 +9,30 @@ import { AdminService } from 'src/app/services/admin.service';
   styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent {
-  public registers_per_load: number = 10;
-  public error_msg: string = "";
-  public user_id: string = "";
-  public limit: number = 10;
-  public skip: number = 0;
-  public toggle_dropdown: boolean = false;
-  public oranges: any[] = []
-  public oranges_displayed: any[] = [];
+  public registers_per_load: number; // Number of registers to show before of display link to show more
+  public error_msg: string = ""; // Error message
+  public user_id: string = ""; // User id
+  public limit: number ; // Limit of register to return
+  public skip: number = 0; // Skip registers before of resquest
+  public toggle_dropdown: boolean = false; // To know if dropdown is open or closed
+  public oranges: any[] = [] // Data to filter
+  public oranges_displayed: any[] = []; // Data to display in html template
 
   constructor(private admin_service: AdminService, private router: Router, private auth_service: AuthService, private translate_s: TranslateService) {
+    if (window.screen.width >= 768){ // PC VERSION
+      this.registers_per_load=9999
+      this.limit=9999
+    }else{ // MOBILE VERSION
+      this.registers_per_load=10
+      this.limit=10
+    }
   }
 
   ngOnInit(): void {
-    let user = localStorage.getItem("user_jc")
-    let token =localStorage.getItem("token_jc");
+    let user = localStorage.getItem("user_jc") // Get user...
+    let token =localStorage.getItem("token_jc"); // Get token
     
+    // Check if user is logged and token isn't expired
     if (token == "" || token == undefined || !user) {
       this.router.navigate(["sign-in"]);
     } else {
@@ -43,11 +51,11 @@ export class AdminHomeComponent {
       })
     }
 
-    this.translate_s.use(localStorage.getItem("lang_jc") || 'en');
+    this.translate_s.use(localStorage.getItem("lang_jc") || 'en'); // Get lang...
 
   }
 
-  // conjuntar objetos oranges por dias
+  // Group registers per day 
   groupDays(array: any[], unshift:boolean) {
     let oranges_displayed = this.oranges_displayed;
     array.forEach((or:any) => {
@@ -59,14 +67,14 @@ export class AdminHomeComponent {
 
       } else {
         oranges_displayed.forEach(or_d => {
-          if (date == or_d.date) {
+          if (date == or_d.date) { // For sort array
             if (unshift) or_d.content.unshift(or);
             if (!unshift) or_d.content.push(or);
             day_found = true
           }
         })
 
-        if (!day_found){
+        if (!day_found){ // For sort array
           if (unshift) oranges_displayed.unshift({date:date, content: [ or ]})
           if (!unshift) oranges_displayed.push({date:date, content: [ or ]})
           
@@ -78,17 +86,17 @@ export class AdminHomeComponent {
 
   }
 
+  // Get oranges by id (limit, skip)
   getOranges() {
     this.admin_service.getLimitSkipOranges(this.user_id, this.limit, this.skip).subscribe(data => {
       this.oranges = data
 
-      // Sumar variable limit y skip
       this.limit += this.registers_per_load;
       this.skip += this.registers_per_load;
 
       this.oranges_displayed = this.groupDays(this.oranges, false);
 
-    }, err => {
+    }, err => { // To show error un popup
         this.error_msg = "popup_error_400_admin_home";
         
         setTimeout(()=>{
@@ -97,6 +105,7 @@ export class AdminHomeComponent {
       })
   }
 
+  // Add register
   addOrange(isLight:boolean) {
     let orange_to_add = {
       isLight: isLight,
@@ -104,9 +113,9 @@ export class AdminHomeComponent {
     }
 
     this.admin_service.addOrange(orange_to_add).subscribe(data => {
-      this.toggleDropwdown(false);
+      this.toggleDropwdown(false); // Close dropdown
 
-      this.oranges_displayed = this.groupDays([data.data], true);
+      this.oranges_displayed = this.groupDays([data.data], true); // group days of array to display
     }, err => {
       this.error_msg = "popup_error_500";
         

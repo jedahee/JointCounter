@@ -1,3 +1,5 @@
+/* CARD STYLES */
+
 .card {
     cursor: pointer;
     display: flex;
@@ -44,6 +46,8 @@
         cursor: pointer; 
     }
 
+    /* BACKGROUND DECORATIONS STYLES */
+
     .bg {
         position: absolute;
         background-color: $dark;
@@ -69,10 +73,13 @@
     }
 }
 
+/* EYE ICON HOVER */
 .card:hover svg path, 
 .card:focus svg path {
     stroke: $green;
 } 
+
+/* BOX WITH INFO STYLES */
 
 .card .content-info > section > div:not(.separator_title) > div {
     max-height: 30px;

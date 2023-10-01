@@ -1,3 +1,4 @@
+/* LINK BASIC STYLES */
 .link {
     position: relative;
     color: $green;
@@ -5,10 +6,12 @@
     cursor: pointer;
 }
 
+/* LINK HOVER BASIC STYLES */
 .link:hover {
     color: $green_hover;
 }
 
+/* LINE IN THE BOTTOM OF TEXT LINK */
 .link::after {
     content: "";
     display: block;

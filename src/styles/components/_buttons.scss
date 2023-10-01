@@ -1,3 +1,4 @@
+/* BUTTONS BASIC STYLES */
 .btn {
     display: flex;
     justify-content: center;
@@ -11,10 +12,12 @@
     transition: .25s ease;
 } 
 
+/* BUTTONS BASIC STYLES HOVER */
 .btn:hover {
     background-color: $green_hover;
 }
 
+/* BUTTON WITH ICON */
 .btn-double-arrow {
     padding-left: $sep-xs;
     display: flex;
@@ -31,6 +34,7 @@
     background-color: $red_hover;
 }
 
+/* BUTTON DISABLED */
 .btn.disabled {
     opacity: .5;
     pointer-events: none;

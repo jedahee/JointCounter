@@ -1,3 +1,4 @@
+/* PROFILE PAGE STYLES */
 .main-admin-profile {
     width: 100%;
     min-height: calc(100vh - $sep-lg - 99px);
@@ -6,6 +7,7 @@
     max-width: 545px;
     margin: auto;
 
+    /* TITLE WITH USERNAME */
     h1 {
         display: flex;
         flex-direction: column;
@@ -62,6 +64,7 @@
         margin-bottom: $sep-md;    
     }
 
+    /* SEPARATOR STYLES */
     .separator_title {
         margin-bottom: 0;
     }
@@ -70,12 +73,14 @@
         margin-top: $sep-xs;
     }
 
+    /* CUSTOM DROPDOWN FOR PROFILE PAGE STYLES */
     .custom-select {
         h3 {
             font-size: 16px;
         }
     }
 
+    /* CUSTOM BUTTON FOR PROFILE PAGE STYLES */
     .form .btn {
         margin-top: $sep-2xs;
     }
@@ -92,6 +97,7 @@
         margin-right: auto;
     }
 
+    /* CUSTOM LINKS FOR PROFILE PAGE STYLES */
     .link {
         margin-bottom: $sep-lg;
     }

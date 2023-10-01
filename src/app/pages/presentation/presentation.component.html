@@ -1,6 +1,10 @@
+<!-- LARGE HEADER -->
 <app-header-large></app-header-large>
 
+<!-- MAIN PAGE -->
 <div class="main-presentation">
+
+    <!-- CUSTOM LANG DROPDOWN -->
     <div class="custom-select">
         <h3>{{"text_h1_presentation" | translate }}</h3>
     
@@ -18,7 +22,8 @@
             </div>
             <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
         </div>
-    
+
+        <!-- OPTIONS OF DROPDOWN -->
         <div class="options lang {{!hidden_options && 'hidden'}}">
             <div class="en {{lang_selected == 'en' && 'disable'}}" (click)="changeLang('en')">
                 <img src="../../../assets/img/flag-britain.png" alt="English: ">
@@ -32,10 +37,12 @@
         </div>
     </div>
     
+    <!-- WELCOME TEXT -->
     <p class="text-presentation">
         {{"text_presentation" | translate }}
     </p>
     
+    <!-- NEXT BUTTON -->
     <button routerLink="/sign-in" class="btn btn-double-arrow">
         <span>{{"text_btn_presentation" | translate }}</span>
         <img src="../../../assets/icons/double-arrow.svg" alt=">>">

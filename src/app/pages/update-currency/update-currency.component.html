@@ -1,13 +1,20 @@
+<!-- LARGE HEADER -->
 <app-header-large></app-header-large>
+
+<!-- ERROR POPUP -->
 <div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
     <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
     <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
 </div>
 
+<!-- DECORATE BACKGROUND ELEMENTS -->
 <div class="decorate decorate-left"></div>
 <div class="decorate decorate-right"></div>
 
+<!-- MAIN PAGE -->
 <main class="main-currency">
+
+    <!-- CUSTOM CURRENCY DROPDOWN -->
     <div class="custom-select">
         <h3>{{"text_h1_currency" | translate }}</h3>
     
@@ -31,6 +38,7 @@
             <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
         </div>
     
+        <!-- OPTIONS CUSTOM DROPDOWN -->
         <div class="options currency {{!hidden_options && 'hidden'}}">
             <div class="euro {{currency_selected == 'euro' && 'disable'}}" (click)="selectCurrency('euro')">
                 <img src="../../../assets/icons/currency-euro.svg" alt="Euro: ">
@@ -48,9 +56,10 @@
             </div>
         </div>
     </div>
-    <!--END SELECT CURRENCY-->
 
+    <!-- CURRENCY DATA FORM FOR PRICES -->
     <form class="form" [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+        <!-- INPUT CIGAR COST -->
         <div class="form-container cigar-cost-container">
             <div>
                 <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
@@ -66,6 +75,7 @@
             </div>
         </div>
 
+        <!-- INPUT PAPER COST -->
         <div class="form-container paper-cost-container">
             <div>
                 <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
@@ -81,6 +91,7 @@
             </div>
         </div>
 
+        <!-- INPUT JOINT COST -->
         <div class="form-container joint-cost-container">
             <div>
                 <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
@@ -96,6 +107,7 @@
             </div>
         </div>
 
+        <!-- SUBMIT BUTTON -->
         <button [disabled]="!currencyForm.valid" type="submit" [ngClass]="!currencyForm.valid ? 'disabled' : ''" class="btn btn-double-arrow">
             <span>{{"text_btn_currency" | translate }}</span>
             <img src="../../../assets/icons/double-arrow.svg" alt=">>">

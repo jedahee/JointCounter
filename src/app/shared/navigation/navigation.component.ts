@@ -8,10 +8,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NavigationComponent {
   
-  public active_name:string = "";
-  public pages_allowed = ["home", "analytics", "profile"]
+  public active_name:string = ""; // ACTIVE PAGE
+  public pages_allowed = ["home", "analytics", "profile"] // PAGE ALLOWED
   
   constructor(private router: Router) {
+    // CHECK THE PAGE NAME AND APPLY THE CORRECT VALUE FOR SCSS STYLES
     let length = this.router.url.split("/").length;
     let page = this.router.url.split("/")[length-1]
     let page_detailed = this.router.url.split("/")[length-3]
@@ -25,6 +26,7 @@ export class NavigationComponent {
   
   }
 
+  // SET THE PAGE NAME AND REDIRECT
   setActive(value: string) {
     if (this.pages_allowed.includes(value)) {
       this.active_name = value;

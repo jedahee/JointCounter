@@ -1,3 +1,5 @@
+/* BASE */
+
 html, body {
     max-width: 100%;
     width: 100%;
@@ -5,6 +7,7 @@ html, body {
     height: auto;
 }
 
+/* SCROLL DESIGN */
 *::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb {
     width: 8px;
     background-color: #2121206a;
@@ -21,6 +24,7 @@ body *::-webkit-scrollbar {
     width: 4px;
 }
 
+/* OTHERS STYLES */
 
 main.content {
     position: relative;

@@ -1,3 +1,5 @@
+/* DETAILED STATS PAGE STYLES */
+
 .main-admin-stats-detailed {
     width: 100%;
     min-height: calc(100vh - $sep-lg - 99px);
@@ -6,6 +8,7 @@
     max-width: 545px;
     margin: auto;
 
+    /* TITLE STYLES */
     h1 {
 
         span.green_word {
@@ -22,6 +25,7 @@
         margin-bottom: $sep-xs;    
     }
 
+    /* STAT CONTAINER STYLES */
     .graphics_container {
         transition: all .3s ease;
         margin-top: calc($sep-sm + 5px);
@@ -35,6 +39,7 @@
         }
     }
 
+    /* GRAPHIC STYLES */
     .graphics-bar {
         transition: all .3s ease;
         width: 100%;
@@ -48,6 +53,7 @@
             transform: rotate(90deg);
         }
 
+        /* CONTENT BARS STYLES */
         .content {
             transition: all .3s ease;
             width: 100%;
@@ -124,6 +130,7 @@
             }
         }
 
+        /* GRAPHIC LARGE STYLES */
         .content.large {
             transition: all .3s ease;
             height: max-content !important;

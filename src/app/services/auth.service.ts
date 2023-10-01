@@ -7,24 +7,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
-  public url: string = environment.API_URL;
+  public url: string = environment.API_URL; // URL BACKEND
 
   constructor(private http: HttpClient) { }
   
+  // Request for create account user
   public register(user:any) {
 
     return this.http.post<any>(this.url + 'api/user/register', user);
   }
 
+  // Request for login user
   public login(user:any) {
 
     return this.http.post<any>(this.url + 'api/user/login', user);
   }
 
+  // Request for validate user
   public me(token: string) {
     return this.http.post<any>(this.url + 'api/user/me', {token: token});
   }
 
+  // Request for update currency and prices
   public updateCurrency(idUser: string, currency: string, cigar_cost:string, paper_cost:string,joint_cost:string) {
     let data = {
       currency: currency,

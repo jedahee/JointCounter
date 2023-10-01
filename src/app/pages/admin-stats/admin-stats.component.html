@@ -1,23 +1,30 @@
+<!-- SMALL HEADER -->
 <app-header-small></app-header-small>
 
+<!-- ERROR POPUP -->
 <div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
     <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
     <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
 </div>
 
+<!-- MAIN PAGE -->
 <main class="main-admin-stats"  [ngClass]="[(hidden_options && month_cards.length == 1) ? 'more_padding' : '', (hidden_options && month_cards.length == 0) ? 'more_padding_0' : '']">
+    
+    <!-- TITLE -->
     <h1>
         <span class="green_word">{{'latest_home_stats'|translate}}</span>
         <br>
         <span>{{'stats_home_stats'|translate}}</span>
     </h1>
 
+    <!-- TOTAL INFO -->
     <section class="info_total">
         <div class="separator_title">
             <h3 class="green_word">Info.</h3>
             <hr>
         </div>
 
+        <!-- CIGAR/JOINT INFO -->
         <div class="content-info">
             <section>
                 <div class="separator_title">
@@ -43,6 +50,7 @@
                 </div>
             </section>
 
+            <!-- MONEY INFO -->
             <section>
                 <div class="separator_title">
                     <h3>{{'your_spent_total'|translate}}</h3>
@@ -71,13 +79,14 @@
         </div>
     </section>
 
+    <!-- FILTER CONTAINER -->
     <nav class="filter-container">
         <div class="separator_title">
             <h3 class="green_word">{{'filter'|translate}}</h3>
             <hr>
         </div>
 
-        
+        <!-- YEAR DROPDOWN -->
         <section class="selects">
             <div class="custom-select year">
         
@@ -94,6 +103,7 @@
                 </div>
             </div>
     
+            <!-- MONTH DROPDOWN -->
             <div class="custom-select month">
             
                 <div class="select" (click)="changeStatus(false)">
@@ -113,12 +123,15 @@
         
     </nav>
 
+    <!-- CARDS CONTENT -->
     <article class="months_content">
+        <!-- SEPARATOR -->
         <div class="separator_title">
             <h3 class="green_word">{{'analytics'|translate}}</h3>
             <hr>
         </div>
 
+        <!-- CARDS -->
         <section class="content">
             <h3 *ngIf="month_cards.length == 0">{{'no_records' | translate}}</h3>
             
@@ -131,17 +144,22 @@
                     <path d="M16.0005 20C18.2097 20 20.0005 18.2091 20.0005 16C20.0005 13.7909 18.2097 12 16.0005 12C13.7914 12 12.0005 13.7909 12.0005 16C12.0005 18.2091 13.7914 20 16.0005 20Z" stroke="#212120" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
 
+                <!-- DATE -->
                 <div class="title_info">
                     <h1>{{mc.month|translate}}</h1>
                     <h3>{{mc.year}}</h3>
                 </div>
 
+                <!-- YEAR/MONTH INFO -->
                 <div class="content-info">
+                    <!-- SEPARATOR -->
                     <section>
                         <div class="separator_title">
                             <h3>{{'your_smoked'|translate}}</h3>
                             <hr>
                         </div>
+
+                        <!-- JOINT/CIGAR INFO -->
                         <div class="joints_no">
         
                             <div class="joints_data">
@@ -161,6 +179,7 @@
                         </div>
                     </section>
         
+                    <!-- MONEY INFO -->
                     <section>
                         <div class="separator_title">
                             <h3>{{'your_spent'|translate}}</h3>
@@ -191,6 +210,6 @@
         </section>
     </article>
 
-
+    <!-- BOTTOM MENU NAVIGATION -->
     <app-navigation></app-navigation>
 </main>

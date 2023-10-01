@@ -1,3 +1,4 @@
+/* HOME PAGE STYLES */
 .main-admin-home {
     width: 100%;
     min-height: calc(100vh - $sep-lg - 100px);
@@ -12,6 +13,7 @@
         margin: auto auto $sep-xs auto;
     }
 
+    /* CONTENT OF HOME PAGE */
     .content-admin-home {
         display: flex;
         flex-direction: column;
@@ -26,6 +28,7 @@
             opacity: .5;
         }
 
+        /* DAY CONTAINER WITH REGISTERS */
         .day, .day > .registers {
             width: 100%;
             display: flex;
@@ -51,6 +54,7 @@
                 }
             }
             
+            /* REGISTER OF DAY STYLES */
             .data-container {
                 width: 100%;
                 display: flex;
@@ -83,6 +87,7 @@
                     }
                 }
 
+                /* DELETE BITTON STYLES */
                 .del-container {
                     z-index: 5;
                     cursor: pointer;
@@ -123,6 +128,7 @@
         
     }
 
+    /* ADD JOINT/CIGAR BUTTON */
     .add-container {
         position: absolute;
         bottom: 85px;
@@ -134,6 +140,7 @@
         justify-content: center;
         align-items: center;
 
+        /* ADD BUTTON */
         .add-dropdown {
             cursor: pointer;
             width: 50px;
@@ -155,6 +162,7 @@
             }
         }
 
+        /* JOINT/CIGAR BUTTON */
         div:not(.add-dropdown){
             background-color: $dark;
             padding: $sep-xs;
@@ -180,6 +188,7 @@
         }
     }
 
+    /* OTHERS STYLES */
     .add-container.active .add-joint {
         left: 0;
     }

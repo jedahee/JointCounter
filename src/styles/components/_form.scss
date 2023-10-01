@@ -1,3 +1,5 @@
+/* FORM BASIC STYLES */
+
 .form {
     display: flex;
     flex-direction: column;
@@ -21,6 +23,7 @@
             }
         }
 
+        /* INPUT FORM STYLES */
         .username, .password, input[type="text"], input[type="password"] {
             border: 2px solid $dark;
             border-radius: $br-md - 4px;
@@ -37,6 +40,8 @@
         min-height: 40px;
         margin-top: $sep-md;
     }
+
+    /* INPUTS HOVER */
 
     .username-container:focus .username,
     .username-container:hover .username,

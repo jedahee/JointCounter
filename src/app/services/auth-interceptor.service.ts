@@ -9,18 +9,19 @@ import { catchError } from 'rxjs/operators';
 export class AuthInterceptorService {
 
   constructor() { }
-
+  
+  // AUTH INTERCEPTOR
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent <any> > {
-    const token: string|null = localStorage.getItem('token_jc');
-    let request = req;
+    const token: string|null = localStorage.getItem('token_jc'); // Get token of JoinCounter
+    let request = req; // Get request returned
 
-    if (token != null) {
+    if (token != null) { // If token exist...
       request = req.clone({
         setHeaders: {
-          auth_token: `${ token }`
+          auth_token: `${ token }` // Set token to header
         }
       });
-    }
+    } // If not exist return error 
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
 

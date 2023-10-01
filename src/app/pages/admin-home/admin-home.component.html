@@ -1,26 +1,33 @@
+<!-- SMALL HEADER -->
 <app-header-small></app-header-small>
 
+<!-- POPUP -->
 <div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
     <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
     <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
 </div>
 
+<!-- MAIN PAGE -->
 <main class="main-admin-home">
+    <!-- TITLE -->
     <h1>
         <span class="green_word">{{'latest_home_admin' | translate}}</span>
         <br>
         <span>{{'records_home_admin' | translate}}</span>
     </h1>
 
+    <!-- CONTENT -->
     <article class="content-admin-home">
         <h3 *ngIf="oranges_displayed.length == 0">{{'no_records' | translate}}</h3>
 
+        <!-- DAY(S) -->
         <div *ngFor="let or of oranges_displayed" class="day">
             <section class="date-container">
                 <span class="date">{{or.date}}</span>
                 <hr>
             </section>
 
+            <!-- JOINT(S)/CIGAR(S) PER DAY(S) -->
             <div class="registers">
                 <div class="data-container" *ngFor="let or_c of or.content">
                     <img class="icon" *ngIf="!or_c.isLight" src="../../../assets/img/joint.png" alt="Joint">
@@ -40,9 +47,11 @@
 
         </div>
 
+        <!-- SHOW MORE LINK -->
         <a (click)="getOranges()" *ngIf="oranges.length >= registers_per_load" class="link">{{'show_more' | translate}}</a>
     </article>
 
+    <!-- ADD JOINT/CIGAR CONTAINER -->
     <div class="add-container"[ngClass]="toggle_dropdown ? 'active' : ''">
         <div class="add-joint" (click)="addOrange(false)">
             <img class="icon" src="../../../assets/img/joint.png" alt="Joint">

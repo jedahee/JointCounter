@@ -1,21 +1,27 @@
+<!-- SMALL HEADER -->
 <app-header-small></app-header-small>
 
-
+<!-- ERROR POPUP -->
 <div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
     <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
     <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
 </div>
 
+<!-- DECORATE BACKGROUND ELEMENTS -->
 <div class="decorate decorate-left"></div>
 <div class="decorate decorate-right"></div>
 
+<!-- MAIN PAGE -->
 <main class="main-signin">
+    <!-- TITLE -->
     <h1>
         <span class="green_word">{{'sign_word_upper' | translate}}</span>
         <span>{{'in_word_upper' | translate}}</span>
     </h1>
 
+    <!-- USER DATA FORM FOR LOGIN -->
     <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- INPUT USERNAME -->
         <div class="username-container">
             <div>
                 <img class="icon-form-login" src="../../../assets/icons/user-02.svg" alt="User icon: ">
@@ -37,6 +43,7 @@
             </div>
         </div>
 
+        <!-- INPUT PASSWORD -->
         <div class="password-container">
             <div>
                 <img class="icon-form-login" src="../../../assets/icons/lock.svg" alt="Lock icon: ">
@@ -58,10 +65,13 @@
             </div>
         </div>
 
+        <!-- SUBMIT BUTTON -->
         <button class="btn" [disabled]="!loginForm.valid" type="submit" [ngClass]="!loginForm.valid ? 'disabled' : ''">
             {{'send' | translate}}
         </button>
     </form>
+
+    <!-- LINK TO CREATE ACCOUNT -->
     <a href="#" class="link" routerLink="/sign-up">{{'sign_up' | translate}}</a>
     
     

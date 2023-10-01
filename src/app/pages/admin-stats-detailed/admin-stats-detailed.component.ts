@@ -30,15 +30,19 @@ export class AdminStatsDetailedComponent {
   public max_cigar: number = 0;
 
   constructor(private admin_service: AdminService, private router: Router, private auth_service: AuthService, private translate_s: TranslateService) {
+    // CHECKING IF PRICES EXISTS (IF NOT REDIRECT TO LOGIN)
     if (this.cigar_cost == null || this.paper_cost == null || this.joint_cost == null || this.currency == null ||
       this.cigar_cost == -1 || this.paper_cost == -1 || this.joint_cost == -1 || this.currency == '')
       this.router.navigate(["sign-in"])
 
+    // MONTHS ALLOWED (MONTH NAME IS FOR TRANSLATIONS)
     this.months=['month_1','month_2','month_3','month_4','month_5','month_6','month_7','month_8','month_9','month_10','month_11','month_12']
+    // GRAPHICS NAME ALLOWED
     this.graphics = ['joint', 'cigar'];
   }
 
   ngOnInit(): void {
+    // CHECK USER IS LOGGED AND TOKEN ISN'T EXPIRED
     let user = localStorage.getItem("user_jc")
     let token = localStorage.getItem("token_jc");
     
@@ -64,12 +68,14 @@ export class AdminStatsDetailedComponent {
 
   }
 
-  
+  // CHANGE HEIGHT OF GRAPHIC  
   setLarge() {
    this.isLarge = !this.isLarge 
   }
 
+  // GET DATA BY USER, YEAR AND MONTH
   loadData() {
+
     this.loadTitle();
     this.loadDaysMonth();
     
@@ -97,6 +103,7 @@ export class AdminStatsDetailedComponent {
     })
   }
 
+  // CALCULATE MAX AND MIN NUMBER OF JOINTS/CIGARS
   calculateMax() {
     this.joints_graphic.forEach(jc =>{
       this.max_joints += Number(jc.quantity)
@@ -106,6 +113,7 @@ export class AdminStatsDetailedComponent {
     });
   }
 
+  // GROUP REGISTER PER DAY
   filterOranges(day:string,array:any[]) {
     
     array.forEach(cg => {
@@ -117,6 +125,7 @@ export class AdminStatsDetailedComponent {
     return array
   }
 
+  // GET NUMBER OF DAYS OF MONTH AND FILL IT WITH A OBJECT PER DAY
   loadDaysMonth() {
     let length_router = this.router.url.split("/").length - 1
     this.days_no_month = new Date(Number(this.year), Number(this.router.url.split("/")[length_router]), 0).getDate()
@@ -133,21 +142,25 @@ export class AdminStatsDetailedComponent {
     }
   }
 
+  // GET MONTH AND YEAR AND DISPLAY IT
   loadTitle() {
     let length_router = this.router.url.split("/").length - 1
     this.year = this.router.url.split("/")[length_router - 1]
     this.month =  "month_"+this.router.url.split("/")[length_router]
   }
 
+  // HIDE/SHOW OPTIONS OF DROPDOWNS
   changeStatus() {
     this.hidden_options = !this.hidden_options;
   }
 
+  // CALL SELECT GRAPHIC AND HIDE OPTIONS DROWDOWN
   changeGraphic(gr:string) {
     this.selectGraphic(gr);
     this.changeStatus();
   }
 
+  // SELECT THE GRAPHIC TO DISPLAY
   selectGraphic(gr: string) {
     if (this.graphics.includes(gr))
       this.graphic_selected = gr;

@@ -14,25 +14,29 @@ export class PresentationComponent {
   public hidden_options: boolean = false;
 
   constructor(private router: Router, private translate_s: TranslateService) { 
-    this.langs = ["es", "en"];
+    this.langs = ["es", "en"]; // LANG ALLOWED
   }
 
   ngOnInit(): void {
+    // CHECK IF USER WAS LOGGED BEFORE
     if (localStorage.getItem("user_jc")) {
       this.router.navigate(["sign-in"]);
     }
-    this.selectLang(localStorage.getItem("lang_jc") || 'en');
+    this.selectLang(localStorage.getItem("lang_jc") || 'en'); // GET LANG
   }
 
+  // SHOW/HIDE DROPDOWN OPTIONS
   changeStatus() {
     this.hidden_options = !this.hidden_options;
   }
 
+  // CALL SELECT LANG AND HIDE OPTIONS DROWDOWN
   changeLang(lang:string) {
     this.selectLang(lang);
     this.changeStatus();
   }
 
+  // CHANGE LANG TO DISPLAY
   selectLang(lang: string) {
     if (this.langs.includes(lang)) {
       this.lang_selected = lang;

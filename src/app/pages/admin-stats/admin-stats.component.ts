@@ -29,14 +29,17 @@ export class AdminStatsComponent {
   public currency: string = localStorage.getItem("currency_jc") || '';
   
   constructor(private admin_service: AdminService, private router: Router, private auth_service: AuthService, private translate_s: TranslateService) {
+    // CHECKING IF PRICES EXISTS (IF NOT REDIRECT TO LOGIN)
     if (this.cigar_cost == null || this.paper_cost == null || this.joint_cost == null || this.currency == null ||
       this.cigar_cost == -1 || this.paper_cost == -1 || this.joint_cost == -1 || this.currency == '')
       this.router.navigate(["sign-in"])
 
+    // MONTHS ALLOWED (MONTH NAME IS FOR TRANSLATIONS)
     this.months=['month_1','month_2','month_3','month_4','month_5','month_6','month_7','month_8','month_9','month_10','month_11','month_12']
   }
 
   ngOnInit(): void {
+    // CHECK USER IS LOGGED AND TOKEN ISN'T EXPIRED
     let user = localStorage.getItem("user_jc")
     let token = localStorage.getItem("token_jc");
     
@@ -58,10 +61,11 @@ export class AdminStatsComponent {
       })
     }
 
-    this.translate_s.use(localStorage.getItem("lang_jc") || 'en');
+    this.translate_s.use(localStorage.getItem("lang_jc") || 'en'); // GET LANG
 
   }
 
+  // FILTER DATA BY YEAR AND MONTH
   filterData() {   
     this.month_cards = this.month_cards_copy_aux.filter(mc => {
       if (this.year_selected != "-1" && this.month_selected == "-1") return mc.year == this.year_selected 
@@ -72,19 +76,22 @@ export class AdminStatsComponent {
 
   }
 
+  // GET DATA BY USER
   loadData(){
     this.admin_service.getOrangesByUser(this.user_id).subscribe(data=>{
       data.forEach((or:any)=>{
-        let year = Number(or.date.split(" ")[0].split("-")[0])
-        let month = or.date.split(" ")[0].split("-")[1]
+        let year = Number(or.date.split(" ")[0].split("-")[0]) // YEAR
+        let month = or.date.split(" ")[0].split("-")[1] // MONTH
         let registerExists = false
         
         month = month.split("")[1];
 
+        // FILL YEAR DROPDOWN
         if (!this.years_range.includes(year)) {
           this.years_range.push(year)
         }
 
+        // CHECK IF THIS MONTH DATA EXISTS, IF EXISTS, SUM 1 TO JOINT OR CIGAR, IF NOT, CREATE THIS MONTH DATA
         if (this.month_cards.length == 0) {
           this.month_cards.unshift({
             month: "month_"+month,
@@ -116,11 +123,13 @@ export class AdminStatsComponent {
 
       })
 
+      // CALCULATE TOTAL JOINTS AND CIGARRETES
       this.month_cards.forEach(mc=>{
         this.total_cigarretes += mc.cigarretes
         this.total_joints += mc.joints
       })
 
+      // SORT YEARS
       this.years_range.sort()
       this.month_cards_copy_aux = this.month_cards;
     }, err => {
@@ -133,12 +142,14 @@ export class AdminStatsComponent {
     })
   }
 
+  // CHANGE YEAR
   selectYear(year:number) {
     this.year_selected=year.toString();
     this.changeStatus(true)
     this.filterData()
   }
 
+  // HIDE/SHOW DROPDOWN
   changeStatus(isHidden1:boolean) {
 
     if (!isHidden1){
@@ -153,6 +164,7 @@ export class AdminStatsComponent {
     }
   }
 
+  // SELECT MONTH
   selectMonth(value:string) {
     if (this.months.includes(value)) {
       this.month_selected = value;

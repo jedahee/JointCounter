@@ -9,11 +9,12 @@ import { AdminStatsComponent } from './pages/admin-stats/admin-stats.component';
 import { AdminStatsDetailedComponent } from './pages/admin-stats-detailed/admin-stats-detailed.component';
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 
+// ROUTES
 const routes: Routes = [
   {
     path: "",
     component: PresentationComponent,
-    data: {animation: 'isPresentation'}
+    data: {animation: 'isPresentation'} // ANIMATION NAME FOR PAGE TRANSITIONS
   },
   {
     path: "sign-in",

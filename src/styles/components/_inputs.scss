@@ -1,5 +1,5 @@
 
-// ### SELECT ###
+/* SELECT STYLES */
 .custom-select {
     width: 100%;
     display: flex;
@@ -32,6 +32,7 @@
         }
     }
     
+    /* DROPDOWN BASIC STYLES  */
     .options.graphic, .options.lang, .options.currency, .options.month, .options.year {
         display: flex;
         flex-direction: column;
@@ -57,6 +58,7 @@
         top: 95%;
     }
 
+    /* STYLES FOR LANG DROPDOWNS */
     .en, .es, .cigar, .joint {
         display: flex;
         align-items: center;
@@ -108,6 +110,7 @@
         }
     }
 
+    /* STYLES FOR CURRENCY DROPDOWN */
     .euro, .dollar, .libra {
         display: flex;
         align-items: center;
@@ -141,6 +144,7 @@
     }
 }
 
+/* SELECT STYLES FORM MONTH/YEAR DROPDOWNS */
 .custom-select.month, .custom-select.year {
     padding: $sep-3xs 0 !important;
 

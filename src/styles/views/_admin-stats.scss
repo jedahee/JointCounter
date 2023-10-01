@@ -1,3 +1,5 @@
+/* STATS PAGE STYLES */
+
 .main-admin-stats {
     width: 100%;
     transition: .3s ease;
@@ -7,16 +9,19 @@
     max-width: 510px;
     margin: auto;
 
+    /* TITLE STYLES */
     h1 {
         font-size: 40px;
         text-align: center;
         margin: auto auto $sep-xs auto;
     }
 
+    /* EXTRA INFO STYLES */
     .info_total {
         margin-bottom: $sep-sm;
     }
 
+    /* DROPDON STYLES */
     .selects {
         display: flex;
         justify-content: space-between;
@@ -25,6 +30,7 @@
         margin-bottom: $sep-xs !important;
     }
 
+    /* CARD BY MONTH STYLES */
     .months_content {
         display: flex;
         flex-direction: column;
@@ -46,6 +52,7 @@
     }
 }
 
+/* PADDING STYLES FOR STATS PAGE */
 .main-admin-stats.more_padding {
     padding-bottom: 210px;
 }

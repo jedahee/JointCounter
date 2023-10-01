@@ -1,3 +1,4 @@
+/* POPUP BASIC STYLES */
 .popup {
     position: fixed;
     top: 10px;
@@ -20,6 +21,7 @@
     }
 }
 
+/* POPUP CONFIRM STYLES */
 .popup.confirm {
     display: flex;
     flex-direction: column;
@@ -31,6 +33,7 @@
         width: 27px;
     }
 
+    /* alert icon and text */
     &>div {
         width: 100%;
         display: flex;
@@ -48,6 +51,7 @@
         margin-bottom: $sep-xs;
     }
 
+    /* Buttons */
     &>div:nth-child(2) {
         justify-content: center;
 
@@ -68,11 +72,13 @@
     }
 }
 
+/* HIDDE POPUP */
 .popup.hidden {
     pointer-events: none;
     opacity: 0;
 }
 
+/* POPUPS BACGROUNDS */
 .popup.error {
     background-color: $red;
     color: $light;
@@ -83,6 +89,7 @@
     color: $light;
 }
 
+/* ERR MSG FOR FORMS */
 .error-msg-container {
     margin-top: $sep-2xs;
     display: flex;

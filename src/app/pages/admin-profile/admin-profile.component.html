@@ -1,15 +1,19 @@
+<!-- SMALL HEADER -->
 <app-header-small></app-header-small>
 
+<!-- ERROR POPUP -->
 <div class="popup error" [ngClass]="error_msg!='' ? '' : 'hidden'">
     <img src="../../../assets/icons/alert-circle-white.svg" alt="Alerta:">
     <span class="msg">{{ error_msg!="" ? (error_msg|translate) : ''}}</span>
 </div>
 
+<!-- SUCCESS POPUP -->
 <div class="popup success" [ngClass]="success_msg!='' ? '' : 'hidden'">
     <img src="../../../assets/icons/check-white.svg" alt="Chequeado:">
     <span class="msg">{{ success_msg!="" ? (success_msg|translate) : ''}}</span>
 </div>
 
+<!-- CONFIRM DELETE ACCOUNT POPUP -->
 <div class="popup confirm" [ngClass]="!confirm_del_account ? 'hidden' : ''">
     <div>
         <img class="icon" src="../../../assets/icons/alert-circle.svg" alt="Alert:">
@@ -21,19 +25,25 @@
     </div>
 </div>
 
+<!-- MAIN PAGE -->
 <main class="main-admin-profile">
+    <!-- TITLE -->
     <h1>
         <div>
+            <!-- TEXTAREA USERNAME EDIT -->
             <textarea (keyup)="name_edited()" type="text" [value]="name_user" [(ngModel)]="name_user" class="green_word" maxlength="30" minlength="1" required></textarea>
             <img [ngClass]="is_name_edit ? '' : 'hidden'" (click)="updateName($event)" src="../../../assets/icons/check-white.svg" alt="Save">
         </div>
         <span [ngClass]="lang_selected=='es' ? 'first': ''">{{'profile_word'|translate}}</span>
     </h1>
 
+    <!-- SEPARATOR -->
     <div class="separator_title">
         <h3 class="green_word">{{'title_profile_lang'|translate}}</h3>
         <hr>
     </div>
+
+    <!-- CUSTOM LANG DROPDOWN -->
     <div class="custom-select">
         <h3>{{'subtitle_profile_lang'|translate}}</h3>
     
@@ -52,6 +62,7 @@
             <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options ? 'rotate' : ''" alt="chevron-down">
         </div>
     
+        <!-- OPTIONS OF DROPDOWN -->
         <div class="options lang {{!hidden_options && 'hidden'}}">
             <div class="en {{lang_selected == 'en' && 'disable'}}" (click)="changeLang('en')">
                 <img src="../../../assets/img/flag-britain.png" alt="English: ">
@@ -70,6 +81,8 @@
         <h3 class="green_word">{{'title_profile_currency'|translate}}</h3>
         <hr>
     </div>
+
+    <!-- CUSTOM CURRENCY DROPDOWN -->
     <div class="custom-select">
     
         <h3>{{'subtitle_profile_currency'|translate}}</h3>
@@ -93,6 +106,7 @@
             <img src="../../../assets/icons/chevron-down.svg" [ngClass]="hidden_options_1 ? 'rotate' : ''" alt="chevron-down">
         </div>
     
+        <!-- OPTIONS OF DROPDOWN -->
         <div class="options currency {{!hidden_options_1 && 'hidden'}}">
             <div class="euro {{currency_selected == 'euro' && 'disable'}}" (click)="selectCurrency('euro')">
                 <img src="../../../assets/icons/currency-euro.svg" alt="Euro: ">
@@ -110,9 +124,10 @@
             </div>
         </div>
     </div>
-    <!--END SELECT CURRENCY-->
 
+    <!-- FORM FOR UPDATE CURRENCY -->
     <form class="form" [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+        <!-- INPUT FOR CIGAR COST -->
         <div class="form-container cigar-cost-container">
             <div>
                 <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
@@ -128,6 +143,7 @@
             </div>
         </div>
 
+        <!-- INPUT FOR PAPER COST -->
         <div class="form-container paper-cost-container">
             <div>
                 <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
@@ -143,6 +159,7 @@
             </div>
         </div>
 
+        <!-- INPUT FOR JOINT COST -->
         <div class="form-container joint-cost-container">
             <div>
                 <img *ngIf="currency_selected == 'euro'" class="icon-form-currency" src="../../../assets/icons/currency-euro.svg" alt="Euro icon: ">
@@ -158,6 +175,7 @@
             </div>
         </div>
 
+        <!-- SUBMIT BUTTON -->
         <button [disabled]="!currencyForm.valid" type="submit" [ngClass]="!currencyForm.valid ? 'disabled' : ''" class="btn">
             <span>{{"update_word" | translate }}</span>
         </button>
@@ -169,5 +187,6 @@
     <p (click)="setConfirmDelAccount()" class="link link-warning">{{'del_account'|translate}}</p>
     <p class="mention">{{'mention'|translate}} <a class="link" target="_blank" href="https://www.flaticon.es/">Flaticon</a></p>
 
+    <!-- BOTTOM MENU NAVIGATION -->
     <app-navigation></app-navigation>
 </main>
