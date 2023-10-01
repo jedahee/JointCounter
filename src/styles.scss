@@ -1,49 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* UTILITIES */
-@media screen and (prefers-color-scheme: dark) or (prefers-color-scheme: light) { 
-    @import './styles/utilities/variables';
 
-    /* TIPO */
-    @import './styles/typo/typography';
+@import './styles/utilities/variables';
 
-    /* BASE */
-    @import './styles/base/reset';
-    @import './styles/base/base';
+/* TIPO */
+@import './styles/typo/typography';
 
-    /* COMPONENTS */
-    @import './styles/components/icons';
-    @import './styles/components/inputs';
-    @import './styles/components/buttons';
-    @import './styles/components/header';
-    @import './styles/components/form';
-    @import './styles/components/links';
-    @import './styles/components/alert';
-    @import './styles/components/navigation';
-    @import './styles/components/separator';
-    @import './styles/components/extra-info';
-    @import './styles/components/card';
+/* BASE */
+@import './styles/base/reset';
+@import './styles/base/base';
 
-    /* VIEWS */
-    @import './styles/views/lang';
-    @import './styles/views/sign-in';
-    @import './styles/views/sign-up';
-    @import './styles/views/admin-currency';
-    @import './styles/views/admin-home';
-    @import './styles/views/admin-stats';
-    @import './styles/views/admin-stats-detailed';
-    @import './styles/views/admin-profile';
+/* COMPONENTS */
+@import './styles/components/icons';
+@import './styles/components/inputs';
+@import './styles/components/buttons';
+@import './styles/components/header';
+@import './styles/components/form';
+@import './styles/components/links';
+@import './styles/components/alert';
+@import './styles/components/navigation';
+@import './styles/components/separator';
+@import './styles/components/extra-info';
+@import './styles/components/card';
 
-    /* LAYOUT */
-    @import './styles/layout/body';
-    @import './styles/layout/header';
-    @import './styles/layout/navigation';
-    @import './styles/layout/presentation';
-    @import './styles/layout/sign-in';
-    @import './styles/layout/sign-up';
-    @import './styles/layout/admin-currency';
-    @import './styles/layout/admin-home';
-    @import './styles/layout/admin-stats';
-    @import './styles/layout/admin-stats-detailed';
+/* VIEWS */
+@import './styles/views/lang';
+@import './styles/views/sign-in';
+@import './styles/views/sign-up';
+@import './styles/views/admin-currency';
+@import './styles/views/admin-home';
+@import './styles/views/admin-stats';
+@import './styles/views/admin-stats-detailed';
+@import './styles/views/admin-profile';
+
+/* LAYOUT */
+@import './styles/layout/body';
+@import './styles/layout/header';
+@import './styles/layout/navigation';
+@import './styles/layout/presentation';
+@import './styles/layout/sign-in';
+@import './styles/layout/sign-up';
+@import './styles/layout/admin-currency';
+@import './styles/layout/admin-home';
+@import './styles/layout/admin-stats';
+@import './styles/layout/admin-stats-detailed';
 @import './styles/layout/admin-profile';
-}
