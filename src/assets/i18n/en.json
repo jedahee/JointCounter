@@ -1,6 +1,6 @@
 {
     "text_presentation": "Track your spending on smoking with JointCounter! Record the amount you smoke and visualize your economic investment in an easy and effective way.",
-    "text_h1_presentation": "Select your lang",
+    "text_h1_presentation": "Select your language",
     "text_english": "English",
     "text_spanish": "Spanish",
     "text_btn_presentation": "Get Started",
@@ -36,8 +36,8 @@
 
     "latest_home_stats": "LATEST",
     "stats_home_stats": "STATS",
-    "your_smoked_total": "You smoked a total of",
-    "your_spent_total": "You spent a total of",
+    "your_smoked_total": "You smoked a number of",
+    "your_spent_total": "You spent exactly",
     "your_smoked": "You smoked",
     "your_spent": "You spent",
     "total_spent": "Total spent",
@@ -52,8 +52,8 @@
     "visual_data":"Graphic Data",
 
     "profile_word": "PROFILE",
-    "title_profile_lang": "Update lang",
-    "subtitle_profile_lang":"Update your lang",
+    "title_profile_lang": "Update language",
+    "subtitle_profile_lang":"Update your language",
     "title_profile_currency":"Update currency and prices",
     "subtitle_profile_currency":"Update your currency",
     "update_word": "Update",
