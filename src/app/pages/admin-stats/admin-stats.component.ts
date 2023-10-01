@@ -84,7 +84,11 @@ export class AdminStatsComponent {
         let month = or.date.split(" ")[0].split("-")[1] // MONTH
         let registerExists = false
         
-        month = month.split("")[1];
+
+        // Split number "0X" to "X" Ex. "09" -> "9" (if the number is less than 10)
+        if (Number(month.split("")[0]) == 0)
+          month = month.split("")[1];
+
 
         // FILL YEAR DROPDOWN
         if (!this.years_range.includes(year)) {
@@ -123,6 +127,8 @@ export class AdminStatsComponent {
 
       })
 
+      console.log(this.month_cards)
+      
       // CALCULATE TOTAL JOINTS AND CIGARRETES
       this.month_cards.forEach(mc=>{
         this.total_cigarretes += mc.cigarretes

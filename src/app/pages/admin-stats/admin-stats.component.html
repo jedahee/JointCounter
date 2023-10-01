@@ -135,7 +135,7 @@
         <section class="content">
             <h3 *ngIf="month_cards.length == 0">{{'no_records' | translate}}</h3>
             
-            <div class="card" *ngFor="let mc of month_cards" routerLink="/admin/analytics/{{mc.year}}/{{mc.month.split('')[mc.month.split('').length-1]}}">
+            <div class="card" *ngFor="let mc of month_cards" routerLink="/admin/analytics/{{mc.year}}/{{mc.month.split('_')[mc.month.split('_').length-1]}}">
                 <div class="bg bg-1"></div>
                 <div class="bg bg-2"></div>
                 

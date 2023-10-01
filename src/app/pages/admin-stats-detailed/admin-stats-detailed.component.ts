@@ -146,7 +146,7 @@ export class AdminStatsDetailedComponent {
   loadTitle() {
     let length_router = this.router.url.split("/").length - 1
     this.year = this.router.url.split("/")[length_router - 1]
-    this.month =  "month_"+this.router.url.split("/")[length_router]
+    this.month =  "month_"+(Number(this.router.url.split("/")[length_router]))
   }
 
   // HIDE/SHOW OPTIONS OF DROPDOWNS
