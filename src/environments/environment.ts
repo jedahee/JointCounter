@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    API_URL: 'http://localhost:3000/' // url to backend
+    API_URL: 'https://orange-counter-back.onrender.com/' // url to backend
   };
   
   /*
