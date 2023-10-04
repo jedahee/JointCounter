@@ -26,7 +26,6 @@ export class AuthInterceptorService {
       catchError((err: HttpErrorResponse) => {
 
         if (err.status >= 400) {
-          console.log(err)
         }
 
         return throwError( err );

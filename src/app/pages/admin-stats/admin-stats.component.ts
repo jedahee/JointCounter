@@ -127,7 +127,6 @@ export class AdminStatsComponent {
 
       })
 
-      console.log(this.month_cards)
       
       // CALCULATE TOTAL JOINTS AND CIGARRETES
       this.month_cards.forEach(mc=>{
