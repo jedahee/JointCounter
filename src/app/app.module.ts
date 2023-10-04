@@ -17,6 +17,7 @@ import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 import { AdminStatsComponent } from './pages/admin-stats/admin-stats.component';
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 import { AdminStatsDetailedComponent } from './pages/admin-stats-detailed/admin-stats-detailed.component';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 // Function for allow i18n
 export function HttpLoaderFactory(http: HttpClient) {
@@ -55,6 +56,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ],
