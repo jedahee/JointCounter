@@ -1,8 +1,12 @@
 # JointCounter
 
-_EmojiFinder is a web game that tries to find the repeated emojis in the shortest possible time._
+_The web application that will help you keep track of exactly how much you smoke and how much you spend on it._
 
-![image](https://github.com/jedahee/Emoji-Finder-Web-Game/assets/56111700/049aec7d-181a-44ad-98a5-1069899f8115)
+![image](https://github.com/jedahee/JointCounter/assets/56111700/c1481ef3-a17e-4d89-a4d0-e1a3914baaef)
+![image](https://github.com/jedahee/JointCounter/assets/56111700/a49a6bf9-91af-411c-b76c-66446cc8bdb6)
+![image](https://github.com/jedahee/JointCounter/assets/56111700/4b7a88d1-120e-4500-aa2c-c5f4decf9b1e)
+![image](https://github.com/jedahee/JointCounter/assets/56111700/2c250a98-9740-4c55-9fca-67d9cafe5492)
+![image](https://github.com/jedahee/JointCounter/assets/56111700/5a44287b-0998-4b4e-8f2d-5f1444b45c0a)
 
 ## Getting Started 🚀
 
