@@ -19,8 +19,11 @@ See **Deployment** for how to deploy the project.
 ### Prerequisites 📋
 
 _You must have any supported browser (Chrome, Firefox, Safari, etc)._
+
 _You must have installed:_
+
 _- Angular CLI: Run this command for install Angular CLI `npm install -g @angular/cli`_
+
 _- Node (NPM Package)_ [Ver](https://nodejs.org/en/download)
 
 ### Installing 🔧
