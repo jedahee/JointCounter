@@ -100,30 +100,32 @@ _the structure of the project is as follows:_
 
 <details open>
 <summary>app/</summary>
-    <strong>- interceptors/:</strong> Intercepts all requests and inserts the validation token in the headers
-    <strong>- services/:</strong> Files where fetch requests
-    <strong>- pages/:</strong> Page components, integrate components of the shared/ folder
-    <strong>- models/:</strong> Interface for allowed response types
-    <strong>- shared/:</strong> Shared components between any modules
-    <strong>route-animations.ts:</strong> For Page Transitions
+    <strong>- interceptors/:</strong> Intercepts all requests and inserts the validation token in the headers<br>
+    <strong>- services/:</strong> Files where fetch requests<br>
+    <strong>- pages/:</strong> Page components, integrate components of the shared/ folder<br>
+    <strong>- models/:</strong> Interface for allowed response types<br>
+    <strong>- shared/:</strong> Shared components between any modules<br>
+    <strong>route-animations.ts:</strong> For Page Transitions<br>
 </details>
+
 
 <details open>
 <summary>assets/</summary>
-    **- fonts/:** fonts used in the web app
-    **- i18n/:** JSON with key/values for traductions
-    **- icons/:** Icons directory, usually, SVG images
-    **- img/:** Images directory, usually, PNG/JPG images
+    <strong>- fonts/:</strong> fonts used in the web app<br>
+    <strong>- i18n/:</strong> JSON with key/values for traductions<br>
+    <strong>- icons/:</strong> Icons directory, usually, SVG images<br>
+    <strong>- img/:</strong> Images directory, usually, PNG/JPG images<br>
 </details>
+
 
 <details open>
 <summary>styles/</summary>
-    **- base/:** Basic/Reset styles
-    **- components/:** Styles for small components in web app
-    **- layout/:** Responsive design pages
-    **- typo/:** Typography styles and fonts
-    **- views/:** Page styles
-    **- utilities/:** Variables of scss
+    <strong>- base/:</strong> Basic/Reset styles<br>
+    <strong>- components/:</strong> Styles for small components in web app<br>
+    <strong>- layout/:</strong> Responsive design pages<br>
+    <strong>- typo/:</strong> Typography styles and fonts<br>
+    <strong>- views/:</strong> Page styles<br>
+    <strong>- utilities/:</strong> Variables of scss<br>
 </details>
 
 **styles.scss:** File where all the scss files are joined
