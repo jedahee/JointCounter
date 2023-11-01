@@ -12,13 +12,16 @@ _The web application that will help you keep track of exactly how much you smoke
 
 ## Getting Started 🚀
 
-_You only need to clone the project in a local environment. To execute you must start the file **'index.html'**._
+_You only need to clone the project in a local environment. To execute you must run the command **'ng serve'**._
 
 See **Deployment** for how to deploy the project.
 
 ### Prerequisites 📋
 
 _You must have any supported browser (Chrome, Firefox, Safari, etc)._
+_You must have installed:_
+_- Angular CLI: Run this command for install Angular CLI `npm install -g @angular/cli`_
+_- Node (NPM Package)_ [Ver](https://nodejs.org/en/download)
 
 ### Installing 🔧
 
@@ -27,7 +30,25 @@ _These are the next steps to be able to execute the project in your local enviro
 _You can use Git or Github to clone the project in a local environment. If you use Github you must click on the button that says 'Code' and then on 'Download Zip'. But if you use Git you can use the following command:_
 
 ```
-git clone https://github.com/jedahee/Emoji-Finder-Web-Game.git)
+git clone https://github.com/jedahee/JointCounter.git)
+```
+
+_We enter inside the root directory with:_
+
+```
+cd /your/path/JointCounter
+```
+
+_Now we need to install the project dependencies by executing the command:_
+
+```
+npm install
+```
+
+_You would already have your local copy of the project ready to run. Run the following command in root project directory:_
+
+```
+ng serve
 ```
 
 ## Deployment 📦
