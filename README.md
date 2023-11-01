@@ -94,6 +94,40 @@ _Some of the tools that I used to create this project:_
 * Modules - Structure the web parts
 * Services - Fetch requests
 
+## Project structure 🏗️
+
+_the structure of the project is as follows:_
+
+<details open>
+<summary>app/</summary>
+    **- interceptors/:** Intercepts all requests and inserts the validation token in the headers
+    **- services/:** Files where fetch requests
+    **- pages/:** Page components, integrate components of the shared/ folder
+    **- models/:** Interface for allowed response types
+    **- shared/:** Shared components between any modules
+    **route-animations.ts:** For Page Transitions
+</details>
+
+<details open>
+<summary>assets/</summary>
+    **- fonts/:** fonts used in the web app
+    **- i18n/:** JSON with key/values for traductions
+    **- icons/:** Icons directory, usually, SVG images
+    **- img/:** Images directory, usually, PNG/JPG images
+</details>
+
+<details open>
+<summary>styles/</summary>
+    **- base/:** Basic/Reset styles
+    **- components/:** Styles for small components in web app
+    **- layout/:** Responsive design pages
+    **- typo/:** Typography styles and fonts
+    **- views/:** Page styles
+    **- utilities/:** Variables of scss
+</details>
+
+**styles.scss:** File where all the scss files are joined
+
 ## Contributing 🖇️
 _This project is not open for new contributions_
 
