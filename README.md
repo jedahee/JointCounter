@@ -100,12 +100,12 @@ _the structure of the project is as follows:_
 
 <details open>
 <summary>app/</summary>
-    **- interceptors/:** Intercepts all requests and inserts the validation token in the headers
-    **- services/:** Files where fetch requests
-    **- pages/:** Page components, integrate components of the shared/ folder
-    **- models/:** Interface for allowed response types
-    **- shared/:** Shared components between any modules
-    **route-animations.ts:** For Page Transitions
+    <strong>- interceptors/:</strong> Intercepts all requests and inserts the validation token in the headers
+    <strong>- services/:</strong> Files where fetch requests
+    <strong>- pages/:</strong> Page components, integrate components of the shared/ folder
+    <strong>- models/:</strong> Interface for allowed response types
+    <strong>- shared/:</strong> Shared components between any modules
+    <strong>route-animations.ts:</strong> For Page Transitions
 </details>
 
 <details open>
