@@ -6,6 +6,7 @@ import { AdminService } from 'src/app/services/admin.service';
 import { FormGroup, FormBuilder, Validators, FormControl, NgForm } from '@angular/forms';
 
 @Component({
+  standalone: false,
   selector: 'app-admin-profile',
   templateUrl: './admin-profile.component.html',
   styleUrls: ['./admin-profile.component.scss']

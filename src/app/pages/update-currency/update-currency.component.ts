@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormBuilder, Validators, FormControl, NgForm } from '@angular/forms';
 
 @Component({
+  standalone: false,
   selector: 'app-update-currency',
   templateUrl: './update-currency.component.html',
   styleUrls: ['./update-currency.component.scss']

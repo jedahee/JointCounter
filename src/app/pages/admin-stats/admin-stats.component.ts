@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
+  standalone: false,
   selector: 'app-admin-stats',
   templateUrl: './admin-stats.component.html',
   styleUrls: ['./admin-stats.component.scss']

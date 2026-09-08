@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 @Component({
+  standalone: false,
   selector: 'app-admin-home',
   templateUrl: './admin-home.component.html',
   styleUrls: ['./admin-home.component.scss']

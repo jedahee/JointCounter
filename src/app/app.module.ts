@@ -4,8 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { PresentationComponent } from './pages/presentation/presentation.component';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common/http';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,11 +17,7 @@ import { AdminStatsComponent } from './pages/admin-stats/admin-stats.component';
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 import { AdminStatsDetailedComponent } from './pages/admin-stats-detailed/admin-stats-detailed.component';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
-
-// Function for allow i18n
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+import { AppTranslateLoader } from './app-translate-loader';
 
 @NgModule({
   declarations: [
@@ -43,16 +38,18 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    TranslateModule.forRoot({ // For translate
-      loader: { 
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
+    HttpClientModule
   ],
   providers: [ // Intercept requests
+    provideTranslateService({
+      lang: 'en',
+      fallbackLang: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useClass: AppTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,

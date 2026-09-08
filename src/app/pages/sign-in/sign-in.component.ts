@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators, FormControl, NgForm } from '@angula
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
+  standalone: false,
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
