@@ -4,6 +4,7 @@ import { HeaderLargeComponent } from './header-large/header-large.component';
 import { HeaderSmallComponent } from './header-small/header-small.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -13,13 +14,15 @@ import { SpinnerComponent } from './spinner/spinner.component';
     SpinnerComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TranslatePipe
   ],
   exports:[
     HeaderLargeComponent,
     HeaderSmallComponent,
     NavigationComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    TranslatePipe
   ]
 })
 export class SharedModule { }
