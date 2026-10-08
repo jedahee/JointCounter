@@ -24,7 +24,7 @@ _You must have installed:_
 
 _- Angular CLI: Run this command for install Angular CLI `npm install -g @angular/cli`_
 
-_- Node (NPM Package)_ [Ver](https://nodejs.org/en/download)
+_- Node 22 (LTS) (NPM Package)_ [Ver](https://nodejs.org/en/download) _(the project requires Node `22.12+`; a `.nvmrc` is provided, run `nvm use`)_
 
 ### Installing 🔧
 
