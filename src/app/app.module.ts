@@ -19,6 +19,10 @@ import { AdminStatsDetailedComponent } from './pages/admin-stats-detailed/admin-
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { AppTranslateLoader } from './app-translate-loader';
 
+export function appTranslateLoaderFactory(http: HttpClient) {
+  return new AppTranslateLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +50,7 @@ import { AppTranslateLoader } from './app-translate-loader';
       fallbackLang: 'en',
       loader: {
         provide: TranslateLoader,
-        useClass: AppTranslateLoader,
+        useFactory: appTranslateLoaderFactory,
         deps: [HttpClient]
       }
     }),
